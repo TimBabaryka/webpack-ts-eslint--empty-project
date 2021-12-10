@@ -1,3 +1,7 @@
 import './style.scss';
+import mainPage from './navigation';
 
-console.log('Hello world');
+mainPage()
+
+
+
