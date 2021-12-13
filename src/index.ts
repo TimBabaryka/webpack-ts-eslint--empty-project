@@ -1,7 +1,15 @@
 import './style.scss';
-import mainPage from './navigation';
+import {mainPage,settingPage} from './navigation';
+import {toys} from './toysSort';
 
-mainPage()
+// import {playSong} from './music';
 
+
+ 
+toys();
+settingPage();
+mainPage();
+
+// playSong();
 
 

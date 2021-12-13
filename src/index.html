@@ -8,13 +8,129 @@
 </head>
 <body>
 
+
+  <!-- <section class="dressBox">
+    <header class="header">
+      <a class="backToMain"  href="#">
+      </a>
+      <a class="dressTreePage"  href="#">
+      Ёлки</a>
+      <a class="toys"  href="#"> Игрушки
+      </a>
+    </header>
+  </section> -->
+
   <section class="settings">
 
-    <header class="header"></header>
-    <div class="left"> </div>
-    <div class="center"> </div>
-    <div class="right"> </div>
-   <div class="bigSlot"></div>
+    <header class="header">
+      <a class="backToMain"  href="#">
+      </a>
+      <a class="dressTreePage"  href="#">
+      Ёлки</a>
+      <a class="toys"  href="#"> Игрушки
+      </a>
+    </header>
+    <div class="leftSlot">
+        <div class="search">
+          <button class="audio"></button>
+          <form>
+            <input class="search-input" type="text" name="search" placeholder="Search..">
+          </form>
+        </div>
+        <div class="sort">
+          <h2>Сортировать по:</h2>
+          <div class="dropdown">
+            <button class="dropbtn">Dropdown</button>
+            <div class="dropdown-content">
+            <a href="#">названию от А до Я</a>
+            <a href="#">названию от Я до А</a>
+            <a href="#">количеству убывание</a>
+            <a href="#">количеству возрастанию</a>
+            </div>
+          </div>
+
+        </div>
+        <div class="categories">
+          <h2>Категории</h2>
+          <form class="styleCategory">
+            <input type="checkbox" id="categoryAll" name="all" value="all">
+            <label for="all"> Все</label><br>
+          </form>
+        </div>
+        <div class="shape">
+          <h2>Форма</h2>
+          <div class="shapeDisplay">
+            <button data-filter="колокольчик" class="bell"></button>
+            <button data-filter="шар" class="ball"></button>
+            <button data-filter="шишка" class="pine"></button>
+            <button data-filter="звезда" class="star"></button>
+            <button data-filter="снежинка" class="snowflake"></button>
+            <button data-filter="фигурка" class="bird"></button>
+            
+          </div>
+        </div>
+        <div class="amount">
+          <h2> Количество экземпляров</h2>
+        </div>
+        <div class="year">
+          <h2>Год покупки</h2>
+        </div>
+        <div class="color">
+          <h2>Цвет</h2>
+          <label class="custom-checkbox ">
+            <input  type="checkbox" id="white" name="all" >
+            <span class="white"></span>
+          </label>
+          <label class="custom-checkbox2 ">
+            <input  type="checkbox" id="white" name="all" >
+            <span class="yellow"></span>
+          </label>
+          <label class="custom-checkbox3 ">
+              <input  type="checkbox" id="red" name="all" >
+              <span class="red"></span>
+          </label>
+          <label class="custom-checkbox4">
+            <input  type="checkbox" id="blue" name="all" >
+            <span class="blue"></span>
+          </label>
+          <label class="custom-checkbox5">
+            <input  type="checkbox" id="green" name="all" >
+            <span class="green"></span>
+          </label>
+        </div>
+        <div class="size">
+          <h2> Размер </h2>
+          <div class="shapeBox">
+            <form class="shape1">
+              <input type="checkbox" id="categoryAll" name="big">
+              <label for="all"> Большой </label><br>
+            </form>
+            <form class="shape2">
+              <input type="checkbox" id="categoryAll" name="medium">
+              <label for="all"> Средний </label><br>
+            </form>
+            <form class="shape3">
+              <input type="checkbox" id="categoryAll" name="small">
+              <label for="all"> Маленький </label><br>
+            </form>
+         </div> 
+        </div>
+        <div class="favourite">
+          <form class="onlyFav">
+            <label for="all"> Только любимые: </label><br>
+            <input type="checkbox" id="favourite" name="favourite" >
+          </form>
+        </div>
+        <div class="reset">
+          <button class="resetFilters">Сбросить фильтры </button>
+          <button class="resetSettings">Сбросить настройки </button>
+        </div>
+
+   </div>
+   <div class="bigSlot">
+     <!-- <h2 class="styleToys"> Игрушки</h2> -->
+      
+   </div>
 
   </section>
   

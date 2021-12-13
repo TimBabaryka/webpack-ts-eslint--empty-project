@@ -1,44 +1,512 @@
-.settings{
-    padding:2%;
-    background-image:url(./assets/images/mainbi.jpg);
-    background-repeat:no-repeat;
-    background-size: cover;
-    min-height: 100vh;
-    display: none;
-    grid-template-areas:
-   "header header header"
-   "left center right"
-   "bigSlot bigSlot bigSlot";
-   gap: 1% 1%;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 10% 40% 50%;
+// .dressBox{
+//   display:none;
+//   background-color: black;
+//   height: 100vh;
+// }
+
+.settings {
+  padding:1%;
+  background-image:url(./assets/images/mainbi.jpg);
+  background-repeat:no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  display: none;
+  grid-template-areas:
+  "header header "
+  "leftSlot bigSlot ";
+  gap: 1% 1%;
+  grid-template-columns: 0.7fr 1.3fr ;
+  grid-template-rows: 0.2fr 1.7fr;
   color: white;
   text-transform: uppercase;
   background-color: #363636;
 }
 
 .header {
-    grid-area: header;
-    background-color: rgba(27, 12, 12, 0.5);
-
+  display:flex;
+  grid-area: header;
+  background-color: rgba(27, 12, 12, 0.5);
+  justify-content:left;
+  align-items:center;   
 }
 
-.left {
-    grid-area: left;
-    background-color: rgba(27, 162, 172, 0.5);
+.backToMain {
+    margin-left:1%;
+    background-size: contain;
+    background-repeat:no-repeat;
+    width:8%;
+    height:100%;
+    background-image:url(./assets/svg/tree.svg);
 }
 
-.center {
-  grid-area: center;
+.backToMain:hover {
+    filter: invert(63%) sepia(99%) saturate(454%) hue-rotate( 
+    94deg ) brightness(113%) contrast(102%);
+    transition: 0.5s ease-in-out;
+}
+
+.dressTreePage {
+    margin-left:1%;
+    text-decoration: none;
+    color:white;
+}
+
+.dressTreePage:hover {
+    color:#24C5DB;
+    text-decoration:underline;
+}
+
+.toys {
+    color:white;
+    margin-left:1%;
+    text-decoration: none; 
+}
+
+.toys:hover{
+    color:#24C5DB;
+    text-decoration:underline;
+}
+
+.leftSlot {
+  grid-area: leftSlot;
   background-color: rgba(27, 162, 172, 0.5);
+  display: grid; 
+  grid-auto-columns: 1fr; 
+  grid-template-columns: 1fr; 
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+  gap: 1% ; 
+  grid-template-areas: 
+    "search"
+    "sort"
+    "categories"
+    "shape"
+    "amount"
+    "year"
+    "color"
+    "size"
+    "favourite"
+    "reset"; 
 }
 
-.right {
-    grid-area: right;
-    background-color: rgba(27, 162, 172, 0.5);
+.leftSlot h2 {
+  font-size: 0.8rem;
 }
+
+.leftSlot label {
+  font-size: 0.5rem;
+}
+.search { 
+  align-items: center;
+  margin-left: 5%;
+  grid-area: search;
+  display: flex;
+  justify-content: space-around;   
+}
+
+.search-input{
+  margin-left: 5%;
+  width: 80%;
+  height: 50%;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-image: url('./assets/addImages/searchicon.png');
+  background-color: white;
+  background-position: left; 
+  background-repeat: no-repeat;
+  padding: 5px 15px 5px 30px;
+}
+
+.audio {
+    width: 10%;
+    height: 35%;
+    background-image: url(./assets/svg/musicOn.svg);
+    background-repeat: no-repeat;
+    background-color: rgba(27, 162, 172, 0.5);
+    background-size: contain;
+}
+
+.sort {
+  grid-area: sort;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.sort h2 {
+  margin-left: 8%;
+  margin-bottom: 5%;
+}
+
+.dropbtn {
+  border: 1px solid #32a1ce;
+  background-color: rgba(27, 162, 172, 0.5);;
+  color: white;
+  padding: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 10%;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 5px 10px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #04e3eb;
+}
+
+.categories {
+  margin-right: 20%;
+  grid-area: categories;
+  justify-content: space-around;
+  display: flex;
+}
+
+.styleCategory {
+    margin-left: 10%;
+}
+
+.shape {
+  grid-area: shape;
+}
+
+.shape h2 {
+  margin-left: 8%;
+  margin-bottom: 5%;
+}
+
+.shapeDisplay {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.bell {
+  background-color: rgba(27, 162, 172, 0.5);
+  width: 36px;
+  height: 48px;
+  background-repeat: no-repeat;
+  background-image: url(./assets/svg/bell.svg);
+  background-size: contain;
+
+}
+
+.ball {
+  background-color: rgba(27, 162, 172, 0.5);
+  width: 36px;
+  height: 48px;
+  background-repeat: no-repeat;
+  background-image: url(./assets/svg/ball.svg);
+  background-size: contain;
+}
+
+.pine {
+  background-color: rgba(27, 162, 172, 0.5);
+  width: 36px;
+  height: 48px;
+  background-repeat: no-repeat;
+  background-image: url(./assets/svg/pine.svg);
+  background-size: contain;
+}
+
+.star {
+  background-color: rgba(27, 162, 172, 0.5);
+  width: 36px;
+  height: 48px;
+  background-repeat: no-repeat;
+  background-image: url(./assets/svg/star.svg);
+  background-size: contain;
+}
+
+.snowflake{
+  background-color: rgba(27, 162, 172, 0.5);
+  width: 36px;
+  height: 48px;
+  background-repeat: no-repeat;
+  background-image: url(./assets/svg/snowflake.svg);
+  background-size: contain;
+}
+
+.bird {
+  background-color: rgba(27, 162, 172, 0.5);
+  width: 36px;
+  height: 48px;
+  background-repeat: no-repeat;
+  background-image: url(./assets/svg/bird_toy.svg);
+  background-size: contain;
+}
+
+
+
+.amount {
+  grid-area: amount;
+}
+
+.amount h2 {
+  margin-left: 8%;
+}
+
+.year {
+  grid-area: year;
+}
+
+.year h2 {
+  margin-left: 8%;
+}
+
+.color {
+  grid-area: color;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+    
+.color h2 {
+  margin-left: 5%;
+}
+
+.custom-checkbox {
+  width: 25px;
+  height: 25px;
+}
+.custom-checkbox input {
+  display: none;
+}
+.custom-checkbox {
+  .white {
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+      
+  }
+}
+
+.custom-checkbox input:checked +.white {
+  background-size: 60%;
+  width: 25px;
+  height: 25px;
+  border: rgb(0, 255, 242) 5px solid;
+  background-color: rgb(255, 255, 255); 
+}
+
+.custom-checkbox2 {
+  width: 25px;
+  height: 25px;
+}
+
+.custom-checkbox2 input {
+  display: none;
+}
+
+.custom-checkbox2 {
+  .yellow {
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    background-color: yellow;
+    cursor: pointer;
+            
+  }
+}
+    
+.custom-checkbox2 input:checked +.yellow {
+  border: rgb(0, 255, 242) 5px solid;
+  background-size: 60%;
+  background-color: yellow;
+}
+
+.custom-checkbox2 {
+  width: 25px;
+  height: 25px;
+}
+
+.custom-checkbox2 input {
+  display: none;
+}
+
+.custom-checkbox2 {
+  .yellow{
+    width: 25px;
+    height: 25px;    
+    display: inline-block;
+    background-color: yellow;
+    cursor: pointer;
+        
+  }
+} 
+.custom-checkbox2 input:checked +.yellow {
+  border: rgb(0, 255, 242) 5px solid;
+  background-size: 60%;
+  background-color: yellow;
+}
+
+.custom-checkbox3 {
+  width: 25px;
+  height: 25px;
+}
+
+.custom-checkbox3 input {
+  display: none;
+}
+
+.custom-checkbox3 {
+  .red{
+    width: 25px;
+    height: 25px;  
+    display: inline-block;
+    background-color: red;
+    cursor: pointer;   
+  }
+}
+
+.custom-checkbox3 input:checked +.red {
+  border: rgb(0, 255, 242) 5px solid;
+  background-size: 60%;
+  background-color: red;
+}
+
+
+.custom-checkbox4 {
+  width: 25px;
+  height: 25px;
+}
+
+.custom-checkbox4 input {
+  display: none;
+}
+
+.custom-checkbox4 {
+  .blue{
+    width: 25px;
+    height: 25px; 
+    display: inline-block;
+    background-color: blue;
+    cursor: pointer; 
+  }
+}
+
+.custom-checkbox4 input:checked +.blue {
+  border: rgb(0, 255, 242) 5px solid;
+  background-size: 60%;
+  background-color: blue;
+}
+
+
+.custom-checkbox5 {
+  width: 25px;
+  height: 25px;
+}
+
+.custom-checkbox5 input {
+  display: none;
+}
+
+.custom-checkbox5 {
+  .green{
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    background-color: green;
+    cursor: pointer;  
+  }
+}
+
+.custom-checkbox5 input:checked +.green {
+  border: rgb(0, 255, 242) 5px solid;
+  background-size: 60%;
+  background-color: green;
+}
+
+
+
+.size {
+  grid-area: size;
+}
+
+.size h2 {
+  margin-bottom: 5%;
+  margin-left: 8%;
+}
+
+.shapeBox {
+  justify-content: space-evenly;
+  display: flex;
+}
+
+.favourite {
+  grid-area: favourite;
+}
+
+.onlyFav {
+  margin-top: 5%;
+  margin-right: 20%;
+  grid-area: categories;
+  justify-content: space-around;
+  display: flex;
+}
+
+.reset {
+  grid-area: reset;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.resetFilters {
+  border-radius: 10rem;
+  color: white;
+  background-color: rgba(27, 162, 172, 0.5);
+  width: 40%;
+  height: 60%;
+  font-size: 0.6rem;
+}
+
+.resetSettings {
+  border-radius: 10rem;
+  color: white;
+  background-color: rgba(27, 162, 172, 0.5);
+  width: 40%;
+  height: 60%;
+  font-size: 0.6rem;
+  transition: 0.5s ease-in-out;
+}
+
+.reset button:hover {
+  background-color: rgba(187, 14, 14, 0.5);
+  color: black;
+}
+
+
+
 
 .bigSlot {
     grid-area: bigSlot;
     background-color: rgba(27, 162, 172, 0.5);
 }
+
+
