@@ -1,6 +1,6 @@
 import './style.scss';
-import {mainPage,settingPage} from './navigation';
-import {toys} from './toysSort';
+import {mainPage,settingPage} from './TS/navigation';
+import {toys} from './TS/toysSort';
 
 // import {playSong} from './music';
 
