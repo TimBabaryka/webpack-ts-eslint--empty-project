@@ -5,7 +5,7 @@ const toys = document.querySelector(".toys") as HTMLInputElement;
 const dressBox = document.querySelector(".dressBox")as HTMLInputElement;
 
 
-export function settingPage() {
+export function settingPage():void {
      document.querySelector('.backToMain')?.addEventListener("click",() => {
      main.style.display="grid";
      settings.style.display="none"
@@ -13,7 +13,7 @@ export function settingPage() {
 } //from main to settings
 
 
-export function mainPage() {
+export function mainPage():void {
      document.querySelector('.fromMain')?.addEventListener("click",() => { 
      main.style.display="none";
      settings.style.display="grid"

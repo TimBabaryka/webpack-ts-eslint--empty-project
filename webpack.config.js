@@ -28,6 +28,12 @@ module.exports = ({ development }) => ({
   },
   module: {
     rules: [
+      // { 
+      //   test:/\.(ico|gif|png|jpg|jpeg|svg)$/,
+      //   use: ["file-loader"]
+
+      // },
+      
       {
         test: /\.[tj]s$/,
         use: 'ts-loader',

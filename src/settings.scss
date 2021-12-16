@@ -23,6 +23,7 @@
 }
 
 .header {
+  min-height: 121px;
   display:flex;
   grid-area: header;
   background-color: rgba(27, 12, 12, 0.5);
@@ -68,6 +69,7 @@
 }
 
 .leftSlot {
+  max-height: 754px;
   grid-area: leftSlot;
   background-color: rgba(27, 162, 172, 0.5);
   display: grid; 
@@ -118,8 +120,8 @@
 }
 
 .audio {
-    width: 10%;
-    height: 35%;
+    width: 35px;
+    height: 35px;
     background-image: url(./assets/svg/musicOn.svg);
     background-repeat: no-repeat;
     background-color: rgba(27, 162, 172, 0.5);
@@ -504,7 +506,7 @@
 
 .bigSlot {
   justify-content: center;
-  gap: 10px 20px;
+ 
   flex-wrap: wrap;
   display: flex;
   grid-area: bigSlot;
@@ -517,17 +519,25 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  border: white 2px solid;
-  margin-top: 2%;
-  margin-bottom: 2%;
-  margin-left: 3%;
+  border: white 1px solid;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  margin-left: 1%;
   height: fit-content;
   width: fit-content;
   cursor: pointer;
 }
 
+// .card p {
+//   font-size: 50%;
+// }
+
 .card:hover {
   background-color: rgb(8, 201, 235);
+}
+
+.titleCard {
+  font-size: 66%;
 }
 
 
@@ -551,6 +561,12 @@
   .bigSlot p {
     font-size: 0.5rem;
     margin-top: 4%;
+  }
+  .card {
+    max-height: 222px;
+    max-width: 156px;
+    height: auto;
+    width:-webkit-fill-available;
   }
 }
 
