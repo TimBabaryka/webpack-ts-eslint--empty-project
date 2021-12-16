@@ -75,10 +75,11 @@
   display: grid; 
   grid-auto-columns: 1fr; 
   grid-template-columns: 1fr; 
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
   gap: 1% ; 
   grid-template-areas: 
     "search"
+    "snowMusic"
     "sort"
     "categories"
     "shape"
@@ -117,6 +118,22 @@
   background-position: left; 
   background-repeat: no-repeat;
   padding: 5px 15px 5px 30px;
+}
+
+
+.snowMusic{
+  grid-area: snowMusic;
+  display: flex;
+  justify-content: space-around; 
+}
+
+.snowFlake {
+  width: 35px;
+  height: 35px;
+  background-image: url(./assets/svg/snowflake.svg);
+  background-repeat: no-repeat;
+  background-color: rgba(27, 162, 172, 0.5);
+  background-size: contain;
 }
 
 .audio {
@@ -545,9 +562,27 @@
   margin: 0 auto;
   background-repeat: no-repeat;
   background-size: contain;
-  background-image: url(./assets/addImages/1.jpg);
   width: 100px;
   height: 100px;
+}
+
+
+.hide {
+  opacity: 1;
+  animation-name: a1;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+@keyframes a1 {
+  to {
+    opacity: 0;
+    min-width: 0;
+    min-height: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    display: none;
+  }
 }
 
 @media screen and (max-width:1440px) {
@@ -570,3 +605,6 @@
   }
 }
 
+#canvas {
+  z-index: 2;
+}

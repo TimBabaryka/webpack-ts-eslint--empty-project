@@ -1,34 +1,13 @@
-// let myAudio = document.querySelector(".audio")
+let myAudio = document.querySelector(".audio") as HTMLInputElement;
+const audio = new Audio('./audio/audio.mp3');
 
-
-
-// myAudio = new Audio('assets/music.mp3'); 
-// if (typeof myAudio.loop == 'boolean')
-// {
-//     myAudio.loop = true;
-// }
-// else
-// {
-//     myAudio.addEventListener('ended', function() {
-//         this.currentTime = 0;
-//         this.play();
-//     }, false);
-// }
-
-
-// export function playSong(){
-//     let myAudio = document.querySelector(".audio")
-
-//     function song(){
-//         const audio = new Audio('@/assets/music.mp3');
-//         ;
-//         audio.play();
-        
-//     }
-    
-// myAudio?.addEventListener("click", song)
-// }
-
-// myAudio.addEventListener("click",)
-// myAudio.play();
-
+export function playSong() {    
+    if(audio.paused) {
+        audio.play();
+        myAudio.style.backgroundColor = "cornflowerblue";
+        audio.loop = true;
+    } else {
+        audio.pause();
+        myAudio.style.backgroundColor = "";
+    }
+};
