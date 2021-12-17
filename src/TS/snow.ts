@@ -43,7 +43,7 @@ function drawSnow(){
             particleArray[i].x,
             particleArray[i].y,
             particleArray[i].radius);
-            gradient.addColorStop(0, "rgba(255,10,255," + particleArray[i].opacity +")"); //white
+            gradient.addColorStop(0, "rgba(255,255,255," + particleArray[i].opacity +")"); //white
             gradient.addColorStop(.8, "rgba(210,236,242," + particleArray[i].opacity +")"); //bluish
             gradient.addColorStop(1, "rgba(237,247,249," + particleArray[i].opacity +")"); // liightbluish
             ctx.beginPath();
@@ -77,5 +77,5 @@ export function updateSnow(){
     moveSnow();
 };
 
-setInterval(updateSnow,50);
-createSnow();
+
+// createSnow();

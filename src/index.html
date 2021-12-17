@@ -24,12 +24,9 @@
   </section> -->
 
   <section class="settings">
+    
 
-   
-
-    <header class="header">
-      <canvas id="canvas"></canvas>
-      
+    <header class="header"> 
       <a class="backToMain"  href="#">
       </a>
       <a class="dressTreePage"  href="#">
@@ -38,6 +35,7 @@
       </a>
     </header>
     <div class="leftSlot">
+      
         <div class="search">
           
           <form>
@@ -46,7 +44,11 @@
         </div>
         <div class="snowMusic">
           <button class="audio" ></button>
-          <button class="snowFlake" ></button>
+          <label class="snowBox">
+            <input  type="checkbox" id="snowFlake" name="all" >
+            <span class="snowFlake"></span>
+          </label>
+         
 
         </div>
         <div class="sort">
@@ -139,7 +141,9 @@
         </div>
 
    </div>
+   
    <div class="bigSlot">
+    <canvas id="canvas"></canvas>
 
    </div>
 

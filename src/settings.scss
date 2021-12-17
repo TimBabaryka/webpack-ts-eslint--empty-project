@@ -607,4 +607,30 @@
 
 #canvas {
   z-index: 2;
+  pointer-events:none;
+}
+
+.snowBox {
+  width: 25px;
+  height: 25px;
+}
+
+.snowBox input {
+  display: none;
+}
+
+.snowBox {
+  .snowFlake{
+    width: 35px;
+    height: 35px;
+    display: inline-block;
+    background-color: rgba(27, 162, 172, 0.5);
+    cursor: pointer;  
+  }
+}
+
+.snowBox input:checked +.snowFlake {
+  border: rgb(0, 255, 242) 5px solid;
+  background-size: 60%;
+  background-color: cornflowerblue;
 }
