@@ -1,4 +1,4 @@
-const canvas =document.getElementById("canvas")as HTMLInputElement;;
+const canvas =document.getElementById("canvas") as HTMLInputElement;;
 const ctx =canvas.getContext("2d") as HTMLInputElement;
 let particlesOnScreen = 245;
 
@@ -17,7 +17,7 @@ function clientResize(ev:any) {
     h =canvas.height =window.innerHeight;
 };
 
-window.addEventListener("resize",clientResize);
+window.addEventListener("resize",clientResize) ;
 
 export function createSnow() {
     for(let i=0; i<particlesOnScreen; i++){
@@ -78,4 +78,3 @@ export function updateSnow(){
 };
 
 
-// createSnow();

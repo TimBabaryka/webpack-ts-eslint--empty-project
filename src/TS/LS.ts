@@ -17,17 +17,18 @@ numOfToys.innerHTML=`игрушек:${num}`;
 export function addtoLS(e:Event) {
     let card = document.querySelectorAll(".card");
         if(e.target.alt && toysState.numberOfToys <20) {
+            console.log(myArray)
             myArray.push(e.target.alt)   
             toysState.numberOfToys++;
-            card.forEach(element => {
-                element.style.backgroundColor = "red";
-            });
+            // card.forEach(element => {
+            //     element.style.backgroundColor = "red";
+            // });
             // card.style.backgroundColor =+ "red"
             displayNumber(toysState.numberOfToys);
             localStorage.setItem("toysNumber", JSON.stringify(myArray));
            } else if (e.target.alt && toysState.numberOfToys ==20) {
             alert("Превышен лимит игрушек")
-           }
+           } 
     };
 
 

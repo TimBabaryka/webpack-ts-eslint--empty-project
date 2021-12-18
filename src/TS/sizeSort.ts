@@ -1,5 +1,5 @@
 
-import {bigSlot, renderSize} from './render';
+import {renderSize} from './render';
 
 
 const small = document.getElementById("small") as HTMLInputElement;
@@ -7,13 +7,20 @@ const medium = document.getElementById("medium") as HTMLInputElement;
 const big = document.getElementById("big") as HTMLInputElement;
 
 
+export function removeSize(size:string):void {
+    const card = document.querySelectorAll(".card").forEach(elem => {
+        if (elem.classList.contains(`${size}`)) {
+            elem.remove()  
+       }
+   });
+}
 
 export function smallSize() {
     if(small.checked) {
         
         renderSize("малый")
     } else {
-        bigSlot.innerHTML ="";
+        removeSize("малый")
     }
 }
 
@@ -23,7 +30,7 @@ export function mediumSize() {
         
         renderSize("средний")
     } else {
-        bigSlot.innerHTML ="";
+        removeSize("средний")
     }
 }
 
@@ -32,7 +39,7 @@ export function bigSize() {
       
         renderSize("большой")
     } else {
-        bigSlot.innerHTML ="";
+        removeSize("большой")
     }
 }
 
