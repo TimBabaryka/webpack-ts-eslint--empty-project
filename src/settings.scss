@@ -484,3 +484,18 @@
   background-size: 60%;
   background-color: cornflowerblue;
 }
+
+.savetoLS {
+  border-radius: 10rem;
+  color: white;
+  background-color: rgba(27, 162, 172, 0.5);
+  width: 10%;
+  height: 40%;
+  font-size: 0.6rem;
+  transition: 0.5s ease-in-out;
+
+}
+
+.savetoLS:hover {
+background-color: green;
+}

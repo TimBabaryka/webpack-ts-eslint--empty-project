@@ -43,6 +43,16 @@ export function renderShape(nameColor:string):void {
 
 
 
+const resetFilters =document.querySelector(".resetFilters") as HTMLInputElement;;
+resetFilters?.addEventListener("click",resetFilter);
+function resetFilter() {
+    let ele= document.getElementsByName('chk') ;  
+    for(var i=0; i<ele.length; i++) {  
+        if(ele[i].type=='checkbox')  
+            ele[i].checked=false;  
+          bigSlot.innerHTML= "";
+}
+};
 
 
 

@@ -34,19 +34,20 @@
       <a class="toys"  href="#"> Игрушки
       </a>
       <h2 class="numberToys">Игрушек:0</h2>
+      <button class="savetoLS"> Сохранить избранное</button>
     </header>
     <div class="leftSlot">
       
         <div class="search">
           
           <form>
-            <input class="search-input" type="text" name="search" placeholder="Search..">
+            <input class="search-input" type="text" autocomplete="off" name="search" placeholder="Search..">
           </form>
         </div>
         <div class="snowMusic">
           <button class="audio" ></button>
           <label class="snowBox">
-            <input  type="checkbox" id="snowFlake" name="all" >
+            <input  type="checkbox" id="snowFlake" name="music" >
             <span class="snowFlake"></span>
           </label>
          
@@ -83,23 +84,23 @@
             <button data-filter="фигурка" class="bird"></button> -->
 
             <label class="shape-checkbox ">
-              <input  type="checkbox" id="bell" name="all" >
+              <input  type="checkbox" id="bell" name="chk" >
               <span class="bell"></span>
             </label>
             <label class="shape-checkbox2 ">
-              <input  type="checkbox" id="ball" name="all" >
+              <input  type="checkbox" id="ball" name="chk" >
               <span class="ball"></span>
             </label>
             <label class="shape-checkbox3 ">
-              <input  type="checkbox" id="pine" name="all" >
+              <input  type="checkbox" id="pine" name="chk" >
               <span class="pine"></span>
             </label>
             <label class="shape-checkbox5 ">
-              <input  type="checkbox" id="snowFlake1" name="all" >
+              <input  type="checkbox" id="snowFlake1" name="chk" >
               <span class="snowFlake"></span>
             </label>
             <label class="shape-checkbox6 ">
-              <input  type="checkbox" id="bird" name="all" >
+              <input  type="checkbox" id="bird" name="chk" >
               <span class="bird"></span>
             </label>
             
@@ -114,23 +115,23 @@
         <div class="color">
           <h2>Цвет</h2>
           <label class="custom-checkbox ">
-            <input  type="checkbox" id="white" name="all" >
+            <input  type="checkbox" id="white" name="chk" >
             <span class="white"></span>
           </label>
           <label class="custom-checkbox2 ">
-            <input  type="checkbox" id="yellow" name="all" >
+            <input  type="checkbox" id="yellow" name="chk" >
             <span class="yellow"></span>
           </label>
           <label class="custom-checkbox3 ">
-              <input  type="checkbox" id="red" name="all" >
+              <input  type="checkbox" id="red" name="chk" >
               <span class="red"></span>
           </label>
           <label class="custom-checkbox4">
-            <input  type="checkbox" id="blue" name="all" >
+            <input  type="checkbox" id="blue" name="chk" >
             <span class="blue"></span>
           </label>
           <label class="custom-checkbox5">
-            <input  type="checkbox" id="green" name="all" >
+            <input  type="checkbox" id="green" name="chk" >
             <span class="green"></span>
           </label>
         </div>
@@ -138,15 +139,15 @@
           <h2> Размер </h2>
           <div class="shapeBox">
             <form class="shape1">
-              <input type="checkbox" id="big" name="big">
+              <input type="checkbox" id="big" name="chk">
               <label for="all"> Большой </label><br>
             </form>
             <form class="shape2">
-              <input type="checkbox" id="medium" name="medium">
+              <input type="checkbox" id="medium" name="chk">
               <label for="all"> Средний </label><br>
             </form>
             <form class="shape3">
-              <input type="checkbox" id="small" name="small">
+              <input type="checkbox" id="small" name="chk">
               <label for="all"> Маленький </label><br>
             </form>
          </div> 
@@ -154,7 +155,7 @@
         <div class="favourite">
           <form class="onlyFav">
             <label for="all"> Только любимые: </label><br>
-            <input type="checkbox" id="favourite" name="favourite" >
+            <input type="checkbox" id="favourite" name="chk" >
           </form>
         </div>
         <div class="reset">

@@ -4,14 +4,15 @@ import {smallSize,mediumSize,bigSize} from './TS/sizeSort';
 import {mainPage,settingPage} from './TS/navigation';
 import {playSong} from './TS/music';
 import {bellShape,ballShape,pineShape,snowFlakeShape,birdShape} from './TS/shapeSort';
-import {myArray,addtoLS} from './TS/LS';
+import {myArray,addtoLS,addtoLocalSaved} from './TS/LS';
 import {allIn} from './TS/sortByButton';
 import {sortFavourite} from './TS/sortByFAv';
 // import {createSnow,updateSnow} from './TS/snow';
 
 // import {sortAll} from './TS/categoryAll';
 
-import { bigSlot, render,removeCard } from './TS/render';
+import { bigSlot, render,removeCard,contentTemp } from './TS/render';
+import data from './TS/data';
 
 const myAudio = document.querySelector(".audio");
 // const CategoryAll = document.getElementById("categoryAll") as HTMLInputElement;
@@ -60,12 +61,13 @@ settingPage();
 mainPage();
 
 
-const addLS = document.querySelectorAll<HTMLElement>(".card").forEach(box => 
+const addLS = document.querySelectorAll<HTMLElement>(".bigSlot").forEach(box => 
 box.addEventListener("click", addtoLS));
 
 
 
-
+const buttonSave = document.querySelector(".savetoLS");
+buttonSave?.addEventListener("click", addtoLocalSaved)
 
 
 
@@ -88,13 +90,37 @@ bird?.addEventListener("click",birdShape);
 
 
 
+const searchBar = document.querySelector(".search-input");
+searchBar?.addEventListener("keyup", (e)=>{
+    const searchString = e.target.value.toLowerCase();
+
+    const filterToys = data.filter((element) => {
+        return (
+            element.name.toLowerCase().includes(searchString) ||
+            element.num.toLowerCase().includes(searchString)||
+            element.count.toLowerCase().includes(searchString) ||
+            element.year.toLowerCase().includes(searchString)||
+            element.shape.toLowerCase().includes(searchString)||
+            element.color.toLowerCase().includes(searchString)||
+            element.size.toLowerCase().includes(searchString)  
+        )
+    });
+    // displayToys(filterToys);
+    // contentTemp.forEach (({name,num,count,year,shape,color,size,favorite}):void => {
+    // bigSlot.innerHTML = `<div class="card ${name} ${shape} ${num} ${count} ${year} ${color} ${size}"> <h2 class="titleCard">${name}</h2><img class="cardImage" src="toys/${num}.png" alt="${num}"><div class="cardDescrp"> <p class="count"> Количество:<span>${count}</span></p><p class="year"> Год покупки:<span>${year}</span></p> <p class="shape"> Форма:<span>${shape}</span></p>  <p class="colour"> Цвет:<span>${color}</span></p> <p class="size"> Размер:<span>${size}</span></p> <p class="favourite"> Любимая<span> ${favorite}</span></p> </div> </div>`
+    console.log(filterToys);
+    renderToys(filterToys)
+})
 
 
-
-
-
-
-
+    const renderToys = (toy) => {
+        const htmlString = toy
+            .map((toys) => {
+                return  `<div class="card ${toys.name} ${toys.shape} ${toys.num} ${toys.count} ${toys.year} ${toys.color} ${toys.size}"> <h2 class="titleCard">${toys.name}</h2><img class="cardImage" src="toys/${toys.num}.png" alt="${toys.num}"><div class="cardDescrp"> <p class="count"> Количество:<span>${toys.count}</span></p><p class="year"> Год покупки:<span>${toys.year}</span></p> <p class="shape"> Форма:<span>${toys.shape}</span></p>  <p class="colour"> Цвет:<span>${toys.color}</span></p> <p class="size"> Размер:<span>${toys.size}</span></p> <p class="favourite"> Любимая<span> ${toys.favorite}</span></p> </div> </div>`;  
+            })
+            .join('');
+        bigSlot.innerHTML = htmlString;
+    };
 
 
 
