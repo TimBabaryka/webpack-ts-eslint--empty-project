@@ -11,7 +11,7 @@ const all4 = document.querySelector('.dropdown-content');
 
 const renderToys = (toy) => {
   const htmlString = toy
-    .map((toys) => `<div class="card ${toys.name} ${toys.shape} ${toys.num} ${toys.count} ${toys.year} ${toys.color} ${toys.size}"> <h2 class="titleCard">${toys.name}</h2><img class="cardImage" src="toys/${toys.num}.png" alt="${toys.num}"><div class="cardDescrp"> <p class="count"> Количество:<span>${toys.count}</span></p><p class="year"> Год покупки:<span>${toys.year}</span></p> <p class="shape"> Форма:<span>${toys.shape}</span></p>  <p class="colour"> Цвет:<span>${toys.color}</span></p> <p class="size"> Размер:<span>${toys.size}</span></p> <p class="favourite"> Любимая<span> ${toys.favorite}</span></p> </div> </div>`)
+    .map((toys:Count) => `<div class="card ${toys.name} ${toys.shape} ${toys.num} ${toys.count} ${toys.year} ${toys.color} ${toys.size}"> <h2 class="titleCard">${toys.name}</h2><img class="cardImage" src="toys/${toys.num}.png" alt="${toys.num}"><div class="cardDescrp"> <p class="count"> Количество:<span>${toys.count}</span></p><p class="year"> Год покупки:<span>${toys.year}</span></p> <p class="shape"> Форма:<span>${toys.shape}</span></p>  <p class="colour"> Цвет:<span>${toys.color}</span></p> <p class="size"> Размер:<span>${toys.size}</span></p> <p class="favourite"> Любимая<span> ${toys.favorite}</span></p> </div> </div>`)
     .join('');
   bigSlot.innerHTML = htmlString;
 };
@@ -43,7 +43,7 @@ export function sort4Buttons() {
     } else if (e.target === from10) {
       contentTemp.sort((a, b) => b.count - a.count);
     }
-    const filterToys = contentTemp.filter((element) => (
+    const filterToys = contentTemp.filter((element:Count) => (
       element.count
                     || element.size
                     || element.name

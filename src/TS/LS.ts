@@ -1,8 +1,8 @@
 const numOfToys = document.querySelector('.numberToys') as HTMLInputElement;
- let myArray = [];
- const colorArray = [];
+let myArray:string[] = [];
+const colorArray:string[] = [];
 const toysState = {
-  numberOfToys: null,
+  numberOfToys: 0,
 };
 function displayNumber(num:string) {
   numOfToys.innerHTML = `игрушек:${num}`;
@@ -20,7 +20,7 @@ function displayNumber(num:string) {
 //     console.log("delete" )
 // }
 
-export function addtoLS(e) {
+export function addtoLS(e:any):void {
   const card = document.querySelectorAll<HTMLInputElement>('.card');
 
   if (myArray.includes(e.target.alt)) {
@@ -31,7 +31,7 @@ export function addtoLS(e) {
     // deleteNum(e.target.alt)
     toysState.numberOfToys--;
 
-    displayNumber(toysState.numberOfToys);
+    displayNumber(toysState.numberOfToys.toString());
   } else if (e.target.alt && toysState.numberOfToys < 20) {
     // console.log(myArray)
     myArray.push(e.target.alt);
@@ -43,7 +43,7 @@ export function addtoLS(e) {
     // });
     // card.style.backgroundColor =+ "red"
     e.target.style.backgroundColor = '#FFE4C4';
-    displayNumber(toysState.numberOfToys);
+    displayNumber(toysState.numberOfToys.toString());
     // addnumber(e.target.alt)
   } else if (e.target.alt && toysState.numberOfToys === 20) {
     alert('Превышен лимит игрушек');
@@ -60,7 +60,7 @@ resetLS?.addEventListener('click', () => {
   myArray = [];
   toysState.numberOfToys = 0;
 
-  displayNumber(toysState.numberOfToys);
+  displayNumber(toysState.numberOfToys.toString());
 
   card.forEach((element) => {
     element.style.backgroundColor = 'transparent';
