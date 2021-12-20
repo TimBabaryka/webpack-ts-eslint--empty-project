@@ -1,6 +1,6 @@
 const numOfToys = document.querySelector('.numberToys') as HTMLInputElement;
  let myArray = [];
- const colorArrray = [];
+ const colorArray = [];
 const toysState = {
   numberOfToys: null,
 };
@@ -24,8 +24,8 @@ export function addtoLS(e) {
   const card = document.querySelectorAll<HTMLInputElement>('.card');
 
   if (myArray.includes(e.target.alt)) {
-    // myArray.pop(e.target.alt);
-    // colorArrray.pop(e.target.alt);
+    myArray.splice(myArray.indexOf(e.target.alt), 1);
+    colorArray.splice(colorArray.indexOf(e.target.alt), 1);
     // console.log("remove" + e.target.alt)
     e.target.style.backgroundColor = 'transparent';
     // deleteNum(e.target.alt)
@@ -35,7 +35,7 @@ export function addtoLS(e) {
   } else if (e.target.alt && toysState.numberOfToys < 20) {
     // console.log(myArray)
     myArray.push(e.target.alt);
-    colorArrray.push(e.target.alt);
+    colorArray.push(e.target.alt);
     toysState.numberOfToys++;
 
     // card.forEach(element => {
