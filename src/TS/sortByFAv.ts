@@ -24,6 +24,6 @@ export function removeFav(fav:boolean):void {
        });
        renderFav();
     } else {
-      removeFav("true")
+      removeFav(true)
     }
 };

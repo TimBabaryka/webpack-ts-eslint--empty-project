@@ -8,6 +8,7 @@
 // }
 
 .settings {
+  position: relative;
   padding:1%;
   background-image:url(./assets/images/mainbi.jpg);
   background-repeat:no-repeat;
@@ -456,8 +457,11 @@
 }
 
 #canvas {
+  position:absolute;
   z-index: 2;
   pointer-events:none;
+  height: 100%;
+    width: 100%;
 }
 
 .snowBox {

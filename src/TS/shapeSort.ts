@@ -55,7 +55,7 @@ export function pineShape() {
 
 export function snowFlakeShape() {
     if(snowFlake1.checked) {
-        console.log(123)
+        
         renderShape("снежинка");
     } else {
         removeShape("снежинка");

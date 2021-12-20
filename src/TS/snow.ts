@@ -1,5 +1,5 @@
-const canvas =document.getElementById("canvas") as HTMLInputElement;;
-const ctx =canvas.getContext("2d") as HTMLInputElement;
+const canvas = <HTMLCanvasElement>document.getElementById("canvas");
+const ctx =canvas.getContext("2d");
 let particlesOnScreen = 245;
 
 let particleArray:any=[];
@@ -36,18 +36,18 @@ export function createSnow() {
 
 function drawSnow(){
     for(let i=0; i<particleArray.length; i++){
-        let gradient = ctx.createRadialGradient(
+        let gradient = ctx?.createRadialGradient(
             particleArray[i].x,
             particleArray[i].y,
             0,
             particleArray[i].x,
             particleArray[i].y,
             particleArray[i].radius);
-            gradient.addColorStop(0, "rgba(255,255,255," + particleArray[i].opacity +")"); //white
-            gradient.addColorStop(.8, "rgba(210,236,242," + particleArray[i].opacity +")"); //bluish
-            gradient.addColorStop(1, "rgba(237,247,249," + particleArray[i].opacity +")"); // liightbluish
-            ctx.beginPath();
-            ctx.arc(
+            gradient?.addColorStop(0, "rgba(255,255,255," + particleArray[i].opacity +")"); //white
+            gradient?.addColorStop(.8, "rgba(210,236,242," + particleArray[i].opacity +")"); //bluish
+            gradient?.addColorStop(1, "rgba(237,247,249," + particleArray[i].opacity +")"); // liightbluish
+            ctx?.beginPath();
+            ctx?.arc(
                 particleArray[i].x,
                 particleArray[i].y,
                 particleArray[i].radius,
@@ -56,7 +56,7 @@ function drawSnow(){
                 false
             );
             ctx.fillStyle = gradient;
-            ctx.fill();
+            ctx?.fill();
     }
 };
 
@@ -72,7 +72,7 @@ function moveSnow(){
 };
 
 export function updateSnow(){
-    ctx.clearRect(0,0,w,h);
+    ctx?.clearRect(0,0,w,h);
     drawSnow();
     moveSnow();
 };
