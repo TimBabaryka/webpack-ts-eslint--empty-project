@@ -1,6 +1,44 @@
 import { Count } from './interface';
 import { render, contentTemp, bigSlot } from './render';
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //  function noFavourite() {
 
 //         contentTemp.sort(function (a:Count,b:Count):number {
@@ -15,19 +53,19 @@ import { render, contentTemp, bigSlot } from './render';
 
 //        }
 
-export function sortAll() {
-  const categoryAll = document.getElementById('categoryAll') as HTMLInputElement;
-  if (categoryAll.checked) {
-    contentTemp.sort((a:Count, b:Count):number => {
-      if (a.favorite > b.favorite) {
-        return -1;
-      } if (a.favorite < b.favorite) {
-        return 1;
-      }
-      return 0;
-    });
-    render();
-  } else {
-    bigSlot.innerHTML = '';
-  }
-}
+// export function sortAll() {
+//   const categoryAll = document.getElementById('categoryAll') as HTMLInputElement;
+//   if (categoryAll.checked) {
+//     contentTemp.sort((a:Count, b:Count):number => {
+//       if (a.favorite > b.favorite) {
+//         return -1;
+//       } if (a.favorite < b.favorite) {
+//         return 1;
+//       }
+//       return 0;
+//     });
+//     render();
+//   } else {
+//     bigSlot.innerHTML = '';
+//   }
+// }

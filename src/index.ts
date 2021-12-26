@@ -3,7 +3,7 @@ import {
   greenColor, blueColor, redColor, whiteColor, yellowColor,
 } from './TS/colorSort';
 import { smallSize, mediumSize, bigSize } from './TS/sizeSort';
-import { mainPage, settingPage } from './TS/navigation';
+import { mainPage, settingPage,toTree,toToysfromTree,toMainfromTree } from './TS/navigation';
 import { playSong } from './TS/music';
 import {
   bellShape, ballShape, pineShape, snowFlakeShape, birdShape,
@@ -11,7 +11,12 @@ import {
 import { addtoLS, addtoLocalSaved } from './TS/LS';
 import { sort4Buttons } from './TS/sortByButton';
 import { sortFavourite } from './TS/sortByFAv';
+import { selectGarland } from './TS/garland';
 import { createSnow, updateSnow } from './TS/snow';
+
+
+
+// import { getItems,renderLSToys} from './TS/getImage';
 
 // import {sortAll} from './TS/categoryAll';
 
@@ -48,6 +53,8 @@ render();
 sort4Buttons();
 settingPage();
 mainPage();
+toToysfromTree();
+toMainfromTree();
 
 const addLS = document.querySelectorAll<HTMLElement>('.bigSlot').forEach((box) => box.addEventListener('click', addtoLS));
 const buttonSave = document.querySelector('.savetoLS');
@@ -69,82 +76,118 @@ const snowFflakes = document.getElementById('snowFlake') as HTMLInputElement;
 const canvas = document.getElementById('canvas') as HTMLInputElement;
 const setting = document.querySelector('.settings') as HTMLInputElement;
 
+const tree = document.querySelector(".tree") as HTMLInputElement;
+const center = document.querySelector(".center") as HTMLInputElement;
+const selectedCH = document.querySelector(".selectedCH") as HTMLInputElement;
+
 function snowOnn() {
   if (snowFflakes.checked) {
-    setting.appendChild(canvas);
+    selectedCH.appendChild(canvas);
     setInterval(updateSnow, 50);
     setTimeout(createSnow, 10);
   } else {
-    setting.removeChild(canvas);
+    selectedCH.removeChild(canvas);
   }
 }
 snowFflakes.addEventListener('click', snowOnn);
 
-console.log(`Работае только в категориях, при перечечении с другой категорией накладывается друг на друга.
 
-1.Страница с игрушками содержит карточки всех игрушек а также фильтры,
- строку поиска, поле для сортировки. Выполняются требования к вёрстке +10
+const dressTreePage = document.querySelector(".dressTreePage");
 
-2.Карточка игрушки содержит её изображение, название,
- текстом или условным значком обозначено количество экземпляров,
-год покупки, форма, цвет, размер, является ли игрушка любимой +10
+dressTreePage.addEventListener("click", toTree);
 
 
-Добавление игрушек в избранное +20
-кликая по карточке с игрушкой или по кнопке на ней игрушку можно добавлять в избранное
- или удалять из избранного. Карточки добавленных в избранное
- игрушек внешне отличаются от остальных +10
-на странице отображается количество добавленных в избранное игрушек.
- При попытке добавить в избранное больше 20 игрушек,
- выводится всплывающее уведомление с текстом "Извините, все слоты заполнены" +10
+// const selectedCH =document.querySelector(".selectedCH");
+const tree1 = document.querySelector(".tree1");
+const tree2 = document.querySelector(".tree2");
+const tree3 = document.querySelector(".tree3");
+const tree4 = document.querySelector(".tree4");
+const tree5 = document.querySelector(".tree5");
+const tree6 = document.querySelector(".tree6");
 
 
-Сортировка +20
-Сортируются только те игрушки, которые в данный момент отображаются на странице
-сортировка игрушек по названию в возрастающем и спадающем порядке +10
-сортировка игрушек по году их приобретения в возрастающем и спадающем порядке +10
+document.querySelector(".selectTree").addEventListener("click", (e)=> {
 
-Фильтры по значению +30
-Выбранные фильтры выделяются стилем.
-фильтры по форме +5
-фильтры по цвету +5
-фильтры по размеру +5
-можно отобразить только любимые игрушки +5
-можно отфильтровать игрушки по нескольким фильтрам одного типа +10
+  if (e.target === tree1) {
+    selectedCH.style.backgroundImage = "url(./tree/1.png)";
+  } else if (e.target === tree2) {
+    selectedCH.style.backgroundImage = "url(./tree/2.png)";
+  } else if (e.target === tree3) {
+    selectedCH.style.backgroundImage = "url(./tree/3.png)";
+  } else if (e.target === tree4) {
+    selectedCH.style.backgroundImage = "url(./tree/4.png)";
+  } else if (e.target === tree5) {
+    selectedCH.style.backgroundImage = "url(./tree/5.png)";
+  } else if (e.target === tree6) {
+    selectedCH.style.backgroundImage = "url(./tree/6.png)";
+  }
+})
 
-
-Сброс фильтров +20
-есть кнопка reset для сброса фильтров +10
-Кнопка reset сбрасывает только фильтры, не влияя на порядок сортировки или игрушки, добавленные в избранное.
-После использования кнопки reset фильтры остаются работоспособными
-при сбросе фильтров кнопкой reset, ползунки range slider сдвигаются к краям, значения ползунков возвращаются к первоначальным, range slider закрашивается одним цветом +10
-
-Сохранение настроек в local storage +10
-выбранные пользователем фильтры, порядок сортировки, добавленные в избранное игрушки сохраняются при перезагрузке страницы. Есть кнопка сброса настроек, которая очищает local storage +10
-
-Поиск +26
-при вводе поискового запроса на странице остаются только те игрушки, в которых есть указанные в поиске буквы в указанном порядке. При этом не обязательно, чтобы буквы были в начале слова. Регистр символов при поиске не учитывается +10
-Поиск ведётся только среди игрушек, которые в данный момент отображаются на странице.
-если очистить поле поиска, на странице отображаются игрушки, соответствующие всем выбранным фильтрам и настройкам сортировки +10
+const background =document.querySelectorAll('.background');
+const boxBG =document.querySelectorAll('.boxBG');
 
 
-Дополнительный функционал на выбор +15/20
+const bg1 = document.querySelector(".bg1");
+const bg2 = document.querySelector(".bg2");
+const bg3 = document.querySelector(".bg3");
+const bg4 = document.querySelector(".bg4");
+const bg5 = document.querySelector(".bg5");
+const bg6 = document.querySelector(".bg6");
+const bg7 = document.querySelector(".bg7");
+const bg8 = document.querySelector(".bg8");
+const bg9 = document.querySelector(".bg9");
+const bg10 = document.querySelector(".bg10");
 
-снежинки +10
-зацикленная музыка +5
-
-
-не выполнено
- 5. Фильтры в указанном диапазоне от и до 
-фильтры по количеству экземпляров 
-фильтры по году покупки 
-для фильтрации в указанном диапазоне используется range slider с двумя ползунками. При перемещении ползунков отображается их текущее значение, разный цвет слайдера до и после ползунка +10
-Range slider можно создать на основе input[type=range] - пример или использовать для этой цели библиотеку noUiSlider, или другую на ваш выбор
-
-Можно отфильтровать игрушки по нескольким фильтрам разного типа 
-Для нескольких фильтров разного типа отображаются только те игрушки, которые соответствуют всем выбранным фильтрам.
-Например, можно отобразить только синие шары. Или любимые белые и красные игрушки купленные в 1940-1960 годах.
-Если игрушек, соответствующих всем выбранным фильтрам нет, на странице выводится уведомление в человекочитаемом формате, например, "Извините, совпадений не обнаружено"
+const boxbg = document.querySelector(".boxBG");
 
 
-151/200`);
+document.querySelector(".background").addEventListener("click", (e)=> {
+
+  if (e.target === bg1) {
+    center.style.backgroundImage = "";
+    center.style.backgroundImage = "url(./bg/1.jpg)";
+  } else if (e.target === bg2) { 
+    center.style.backgroundImage = "";
+    center.style.backgroundImage = "url(./bg/2.jpg)";
+  } else if (e.target === bg3) {
+    center.style.backgroundImage = "";
+    center.style.backgroundImage = "url(./bg/3.jpg)";
+  } else if (e.target === bg4) {
+    center.style.backgroundImage = "";
+    center.style.backgroundImage = "url(./bg/4.jpg)";
+  } else if (e.target === bg5) {
+    center.style.backgroundImage = "";
+    center.style.backgroundImage = "url(./bg/5.jpg)";
+  } else if (e.target === bg6) {
+    center.style.backgroundImage = "";
+    center.style.backgroundImage = "url(./bg/6.jpg)";
+  } else if (e.target === bg7) {
+    center.style.backgroundImage = "";
+    center.style.backgroundImage = "url(./bg/7.jpg)";
+  } else if (e.target === bg8) {
+    center.style.backgroundImage = "";
+    center.style.backgroundImage = "url(./bg/8.jpg)";
+  }else if (e.target === bg9) {
+    center.style.backgroundImage = "";
+    center.style.backgroundImage = "url(./bg/9.jpg)";
+  }else if (e.target === bg10) {
+    center.style.backgroundImage = "";
+    center.style.backgroundImage = "url(./bg/10.jpg)";
+  }
+})
+
+
+const yellowSelect = document.getElementById('yellowSelect') as HTMLInputElement;
+const redSelect = document.getElementById('redSelect') as HTMLInputElement;
+const blueSelect = document.getElementById('blueSelect') as HTMLInputElement;
+const greenSelect = document.getElementById('greenSelect') as HTMLInputElement; 
+const allSelect = document.getElementById('allSelect') as HTMLInputElement;
+const offLights = document.getElementById('offLights') as HTMLInputElement;
+
+
+yellowSelect.addEventListener("click",selectGarland);
+redSelect.addEventListener("click",selectGarland);
+blueSelect.addEventListener("click",selectGarland);
+greenSelect.addEventListener("click",selectGarland);
+allSelect.addEventListener("click",selectGarland);
+

@@ -1,0 +1,554 @@
+$globe-width:   12px;
+$globe-height:  28px;
+$globe-spacing: 40px;
+$globe-spread: 3px;
+$light-off-opacity: 0.4;
+
+
+
+
+.garland {
+    margin-top: 271px;
+    position: absolute;
+    width: 74%;
+    height: 975px;
+    --purple:purple;
+    --red: #ff2c2c;
+    --redW: #ffcccb;
+    --yellow: #ffeb00;
+    --yellowW: lightyellow;
+    --green: #00ff5d;
+    --greenW: #2d500c;
+    --blue: #0095ff;
+    --blueW:#d8ecf3;
+    --speed: 1.5s;
+    margin-left: 165px;
+  }
+  
+  .red1 {
+    fill: var(--red);
+    animation: var(--speed) alternate 0s infinite onlyRed;
+  }
+  .red2 {
+    fill: var(--red);
+    animation: var(--speed) alternate 0s infinite onlyRed1;
+  }
+  
+  .yellow1 {
+    fill: var(--yellow);
+    animation: var(--speed) alternate 0s infinite onlyYellow;
+  }
+  .yellow2 {
+    fill: var(--yellow);
+    animation: var(--speed) alternate 0s infinite onlyYellow1;
+  }
+  
+  .blue1 {
+    fill: var(--blue);
+    animation: var(--speed) alternate 0s infinite onlyBlue;
+  }
+  .blue2 {
+    fill: var(--blue);
+    animation: var(--speed) alternate 0s infinite onlyBlue1;
+  }
+  
+  .green1 {
+    fill: var(--green);
+    animation: var(--speed) alternate 0s infinite onlyGreen;
+  }
+  .green2 {
+    fill: var(--green);
+    animation: var(--speed) alternate 0s infinite onlyGreen1;
+  }
+
+  .allColor1 {
+    fill: var(--green);
+    animation: var(--speed) alternate 0s infinite onlyAll;
+  }
+  .allColor2 {
+    fill: var(--green);
+    animation: var(--speed) alternate 0s infinite blinkpurple;
+  }
+  
+  @keyframes blinkRed {
+    0%{
+      fill: var(--red);
+    }
+    25% {
+      fill: var(--yellow);
+    }
+    50% {
+      fill: var(--blue);
+    }
+    75% {
+      fill: var(--green);
+    }
+  }
+  
+  @keyframes blinkYellow {
+    0%{
+      fill: var(--yellow);
+    }
+    25% {
+      fill: var(--blue);
+    }
+    50% {
+      fill: var(--green);
+    }
+    75% {
+      fill: var(--red);
+    }
+  }
+  
+  @keyframes blinkBlue {
+    0%{
+      fill: var(--blue);
+    }
+    25% {
+      fill: var(--green);
+    }
+    50% {
+      fill: var(--red);
+    }
+    75% {
+      fill: var(--yellow);
+    }
+  }
+  
+  @keyframes blinkpurple {
+    25%{
+      fill: var(--green);
+    }
+    0% {
+      fill: var(--red);
+    }
+    50% {
+      fill: var(--yellow);
+    }
+    75% {
+      fill: var(--blue);
+    }
+    100% {
+      fill: var(--purple);
+    }
+  }
+
+  @keyframes onlyYellow {
+    0%{
+        fill: var(--yellowW);
+    }
+    25% {
+      fill: var(--yellow);
+    }
+    50% {
+      fill: var(--yellowW);
+    }
+    75% {
+      fill: var(--yellow);
+    }
+  }
+
+  @keyframes onlyYellow1 {
+    0%{fill: var(--yellow);
+        
+    }
+    25% {
+      fill: var(--yellowW);
+      
+    }
+    50% {
+      fill: var(--yellow);
+      
+    }
+    75% {
+      fill: var(--yellowW);
+    }
+  }
+
+  @keyframes onlyBlue{
+    0%{
+        fill: var(--blueW);
+    }
+    25% {
+      fill: var(--blue);
+    }
+    50% {
+      fill: var(--blueW);
+    }
+    75% {
+      fill: var(--blue);
+    }
+  }
+
+  @keyframes onlyBlue1 {
+    0%{
+        fill: var(--blue);
+    }
+    25% {
+      fill: var(--blueW);
+    }
+    50% {
+      fill: var(--blue);
+    }
+    75% {
+      fill: var(--blueW);
+    }
+  }
+
+
+  @keyframes onlyRed{
+    0%{
+        fill: var(--redW);
+    }
+    25% {
+      fill: var(--red);
+    }
+    50% {
+      fill: var(--redW);
+    }
+    75% {
+      fill: var(--red);
+    }
+  }
+
+  @keyframes onlyRed1{
+    0%{
+        fill: var(--red);
+    }
+    25% {
+      fill: var(--redW);
+    }
+    50% {
+      fill: var(--red);
+    }
+    75% {
+      fill: var(--redW);
+    }
+  }
+
+  @keyframes onlyGreen{
+    0%{
+        fill: var(--greenW);
+    }
+    25% {
+      fill: var(--green);
+    }
+    50% {
+      fill: var(--greenW);
+    }
+    75% {
+      fill: var(--green);
+    }
+  }
+  @keyframes onlyGreen1 {
+    0%{
+        fill: var(--green);
+    }
+    25% {
+      fill: var(--greenW);
+    }
+    50% {
+      fill: var(--green);
+    }
+    75% {
+      fill: var(--greenW);
+    }
+  }
+  
+  @keyframes onlyAll{
+    0%{
+        fill: var(--green);
+    }
+    25% {
+      fill: var(--red);
+    }
+    50% {
+      fill: var(--blue);
+    }
+    75% {
+      fill: var(--yellow);
+    }
+  }
+  @keyframes onlyAll1{
+    0%{
+        fill: var(--yellow);
+    }
+    25% {
+      fill: var(--blue);
+    }
+    50% {
+      fill: var(--red);
+    }
+    75% {
+      fill: var(--green-);
+    }
+    100% {
+      fill: var(--purple);
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.lights {
+    display:flex;
+    justify-content: space-evenly;
+}
+
+  .lights-checkbox1 {
+    width: 25px;
+    height: 25px;
+  }
+  .lights-checkbox1 input {
+    display: none;
+  }
+  .lights-checkbox1 {
+    .yellowSelect{
+      border-radius: 100%;
+      display: inline-block;
+      cursor: pointer;
+      background-color: yellow;
+      width: 30px;
+      height: 30px;
+      background-repeat: no-repeat;
+      background-size: contain;
+        
+    }
+  }
+  
+  .lights-checkbox1 input:checked +.yellowSelect {
+    border: rgb(0, 255, 242) 2px solid;
+    background-color: yellow; 
+  }
+
+
+
+
+
+
+  .lights-checkbox2 {
+    width: 25px;
+    height: 25px;
+  }
+  .lights-checkbox2 input {
+    display: none;
+  }
+  .lights-checkbox2 {
+    .redSelect{
+     border-radius: 100%;
+      display: inline-block;
+      cursor: pointer;
+      background-color: red;
+      width: 30px;
+      height: 30px;
+      background-repeat: no-repeat;
+      background-size: contain;
+        
+    }
+  }
+  
+  .lights-checkbox2 input:checked +.redSelect {
+    border: rgb(0, 255, 242) 2px solid;
+    background-color: red; 
+  }
+
+
+
+  .lights-checkbox3 {
+    width: 25px;
+    height: 25px;
+  }
+  .lights-checkbox3 input {
+    display: none;
+  }
+  .lights-checkbox3 {
+    .blueSelect{
+        border-radius: 100%;
+      display: inline-block;
+      cursor: pointer;
+      background-color: blue;
+      width: 30px;
+      height: 30px;
+      background-repeat: no-repeat;
+      background-size: contain;
+        
+    }
+  }
+  
+  .lights-checkbox3 input:checked +.blueSelect {
+    border: rgb(0, 255, 242) 2px solid;
+    background-color: blue; 
+  }
+
+
+
+
+  .lights-checkbox4 {
+    width: 25px;
+    height: 25px;
+  }
+  .lights-checkbox4 input {
+    display: none;
+  }
+  .lights-checkbox4 {
+    .greenSelect{
+        border-radius: 100%;
+      display: inline-block;
+      cursor: pointer;
+      background-color: green;
+      width: 30px;
+      height: 30px;  
+      background-repeat: no-repeat;
+      background-size: contain;
+        
+    }
+  }
+  
+  .lights-checkbox4 input:checked +.greenSelect {
+    border: rgb(0, 255, 242) 2px solid;
+    background-color: green; 
+  }
+
+
+
+  .lights-checkbox5 {
+    width: 25px;
+    height: 25px;
+  }
+  .lights-checkbox5 input {
+    display: none;
+  }
+  .lights-checkbox5 {
+    .allSelect {
+      border-radius: 100%;
+      display: inline-block;
+      cursor: pointer;
+      background-image: url(./assets/images/4colours.jpg);
+      width: 30px;
+      height: 30px;  
+      background-repeat: no-repeat;
+      background-size: contain;
+        
+    }
+  }
+  
+  .lights-checkbox5 input:checked +.allSelect {
+    border: rgb(0, 255, 242) 2px solid;
+    background-image: url(./assets/images/4colours.jpg);
+       
+  }
+
+
+
+.offLights {
+    border-radius: 15rem;
+    color: white;
+    background-color: rgba(27, 162, 172, 0.5);
+    width: 20%;
+    height: 19%;
+    font-size: 1.6rem;
+    transition: 0.5s ease-in-out;
+}
+
+
+// .lightrope {
+//     text-align: center;
+//     white-space: nowrap;
+//     overflow: hidden;
+//     position: absolute;
+//     z-index: 1;
+//     margin: 113% 0 0 26px;
+//     padding: 0;
+//     pointer-events: none;
+//     width: 100%;
+//     li {
+//       position: relative;
+//       animation-fill-mode: both; 
+//       animation-iteration-count:infinite;
+//       list-style: none;
+//       margin: 0;
+//       padding: 0;
+//       display: block;
+//       width: $globe-width;
+//       height: $globe-height;
+//       border-radius: 50%;
+//       margin: $globe-spacing/2;
+//       display: inline-block;
+//       background: rgba(0,247,165,1);
+//       box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(0,247,165,1);
+//       animation-name: flash-1;
+//       animation-duration: 2s;
+//       &:nth-child(2n+1) {
+//         background: rgba(0,255,255,1);
+//         box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(0,255,255,0.5);
+//         animation-name: flash-2;
+//         animation-duration: 0.4s;
+//       }
+//       &:nth-child(4n+2) {
+//         background: rgba(247,0,148,1);
+//         box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(247,0,148,1);
+//         animation-name: flash-3;
+//         animation-duration: 1.1s;
+//       }
+//       &:nth-child(odd) {
+//         animation-duration: 1.8s;
+//       }
+//       &:nth-child(3n+1) {
+//         animation-duration: 1.4s;
+//       }
+//       &:before {
+//         content: "";
+//         position: absolute;
+//         background: #222;
+//         width: ($globe-width - 2);
+//         height: $globe-height/3;
+//         border-radius: 3px;
+//         top: (0 - ($globe-height/6));
+//         left: 1px;
+//       }
+//       &:after {
+//         content: "";
+//         top: (0 - $globe-height/2);
+//         left: $globe-width - 3;
+//         position: absolute;
+//         width: $globe-spacing + 12;
+//         height: ($globe-height/3 * 2);
+//         border-bottom: solid #222 2px;
+//         border-radius: 50%;
+//       }
+//       &:last-child:after {
+//         content: none;
+//       }
+//       &:first-child {
+//         margin-left: -30px;
+//       }
+//     }
+//   }
+//   @keyframes flash-1 { 
+//       0%, 100% { background: rgba(0,247,165,1);
+//       box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(0,247,165,1);} 
+//       50% { background: rgba(0,247,165,$light-off-opacity);
+//       box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(0,247,165,0.2);}
+//   }
+//   @keyframes flash-2 { 
+//       0%, 100% { background: rgba(0,255,255,1);
+//       box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(0,255,255,1);} 
+//       50% { background: rgba(0,255,255,$light-off-opacity);
+//       box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(0,255,255,0.2);}
+//   }
+//   @keyframes flash-3 { 
+//       0%, 100% { background: rgba(247,0,148,1);
+//       box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(247,0,148,1);} 
+//       50% { background: rgba(247,0,148,$light-off-opacity);
+//       box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(247,0,148,0.2);}
+//   }

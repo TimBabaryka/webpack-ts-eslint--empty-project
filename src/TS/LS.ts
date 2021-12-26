@@ -1,11 +1,16 @@
+import { constLS } from "./navigation";
+
 const numOfToys = document.querySelector('.numberToys') as HTMLInputElement;
+const numOfToysTree = document.querySelector('.numberToystree') as HTMLInputElement;
 let myArray:string[] = [];
 const colorArray:string[] = [];
 const toysState = {
   numberOfToys: 0,
 };
-function displayNumber(num:string) {
-  numOfToys.innerHTML = `игрушек:${num}`;
+
+export function displayNumber(num:string) {
+  numOfToys.innerHTML = `Игрушек:${num}`;
+  numOfToysTree.innerHTML = `Игрушек:${num}`;
 }
 
 // function addnumber(num){
@@ -44,6 +49,7 @@ export function addtoLS(e:any):void {
     // card.style.backgroundColor =+ "red"
     e.target.style.backgroundColor = '#FFE4C4';
     displayNumber(toysState.numberOfToys.toString());
+    
     // addnumber(e.target.alt)
   } else if (e.target.alt && toysState.numberOfToys === 20) {
     alert('Превышен лимит игрушек');
