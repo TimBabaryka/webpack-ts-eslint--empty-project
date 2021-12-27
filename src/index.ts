@@ -3,19 +3,23 @@ import {
   greenColor, blueColor, redColor, whiteColor, yellowColor,
 } from './TS/colorSort';
 import { smallSize, mediumSize, bigSize } from './TS/sizeSort';
-import { mainPage, settingPage,toTree,toToysfromTree,toMainfromTree } from './TS/navigation';
+import {
+  mainPage, settingPage, toTree, toToysfromTree, toMainfromTree,
+
+} from './TS/navigation';
 import { playSong } from './TS/music';
 import {
   bellShape, ballShape, pineShape, snowFlakeShape, birdShape,
 } from './TS/shapeSort';
 import { addtoLS, addtoLocalSaved } from './TS/LS';
+// import { addtoLS, addtoLocalSaved } from './TS/navigation';
 import { sort4Buttons } from './TS/sortByButton';
 import { sortFavourite } from './TS/sortByFAv';
 import { selectGarland } from './TS/garland';
+
+import { updateCountdown } from './TS/countdown';
 import { createSnow, updateSnow } from './TS/snow';
 // import { allowDrop,drag,drop } from "./TS/dragdrop";
-
-
 
 // import { getItems,renderLSToys} from './TS/getImage';
 
@@ -77,9 +81,9 @@ const snowFflakes = document.getElementById('snowFlake') as HTMLInputElement;
 const canvas = document.getElementById('canvas') as HTMLInputElement;
 const setting = document.querySelector('.settings') as HTMLInputElement;
 
-const tree = document.querySelector(".tree") as HTMLInputElement;
-const center = document.querySelector(".center") as HTMLInputElement;
-const selectedCH = document.querySelector(".selectedCH") as HTMLInputElement;
+const tree = document.querySelector('.tree') as HTMLInputElement;
+const center = document.querySelector('.center') as HTMLInputElement;
+const selectedCH = document.querySelector('.selectedCH') as HTMLInputElement;
 
 function snowOnn() {
   if (snowFflakes.checked) {
@@ -92,145 +96,103 @@ function snowOnn() {
 }
 snowFflakes.addEventListener('click', snowOnn);
 
+const dressTreePage = document.querySelector('.dressTreePage');
 
-const dressTreePage = document.querySelector(".dressTreePage");
-
-dressTreePage.addEventListener("click", toTree);
-
+dressTreePage.addEventListener('click', toTree);
 
 // const selectedCH =document.querySelector(".selectedCH");
-const tree1 = document.querySelector(".tree1") as HTMLInputElement;
-const tree2 = document.querySelector(".tree2") as HTMLInputElement;
-const tree3 = document.querySelector(".tree3") as HTMLInputElement;
-const tree4 = document.querySelector(".tree4") as HTMLInputElement;
-const tree5 = document.querySelector(".tree5") as HTMLInputElement;
-const tree6 = document.querySelector(".tree6") as HTMLInputElement;
+const tree1 = document.querySelector('.tree1') as HTMLInputElement;
+const tree2 = document.querySelector('.tree2') as HTMLInputElement;
+const tree3 = document.querySelector('.tree3') as HTMLInputElement;
+const tree4 = document.querySelector('.tree4') as HTMLInputElement;
+const tree5 = document.querySelector('.tree5') as HTMLInputElement;
+const tree6 = document.querySelector('.tree6') as HTMLInputElement;
 
-const treeNew = document.querySelector(".treeNew") as HTMLInputElement;
-document.querySelector(".selectTree").addEventListener("click", (e)=> {
-
+const treeNew = document.querySelector('.treeNew') as HTMLInputElement;
+document.querySelector('.selectTree').addEventListener('click', (e) => {
   if (e.target === tree1) {
-    treeNew.src = "tree/1.png";
+    treeNew.src = 'tree/1.png';
 
     // selectedCH.style.backgroundImage = "url(./tree/1.png)";
   } else if (e.target === tree2) {
-    treeNew.src = "tree/2.png"
+    treeNew.src = 'tree/2.png';
     // selectedCH.style.backgroundImage = "url(./tree/2.png)";
   } else if (e.target === tree3) {
-    treeNew.src = "tree/3.png"
+    treeNew.src = 'tree/3.png';
     // selectedCH.style.backgroundImage = "url(./tree/3.png)";
   } else if (e.target === tree4) {
-    treeNew.src = "tree/4.png"
+    treeNew.src = 'tree/4.png';
     // selectedCH.style.backgroundImage = "url(./tree/4.png)";
   } else if (e.target === tree5) {
-    treeNew.src = "tree/5.png"
+    treeNew.src = 'tree/5.png';
     // selectedCH.style.backgroundImage = "url(./tree/5.png)";
   } else if (e.target === tree6) {
-    treeNew.src = "tree/6.png"
+    treeNew.src = 'tree/6.png';
     // selectedCH.style.backgroundImage = "url(./tree/6.png)";
   }
-})
+});
 
-const background =document.querySelectorAll('.background');
-const boxBG =document.querySelectorAll('.boxBG');
+const background = document.querySelectorAll('.background');
+const boxBG = document.querySelectorAll('.boxBG');
 
+const bg1 = document.querySelector('.bg1');
+const bg2 = document.querySelector('.bg2');
+const bg3 = document.querySelector('.bg3');
+const bg4 = document.querySelector('.bg4');
+const bg5 = document.querySelector('.bg5');
+const bg6 = document.querySelector('.bg6');
+const bg7 = document.querySelector('.bg7');
+const bg8 = document.querySelector('.bg8');
+const bg9 = document.querySelector('.bg9');
+const bg10 = document.querySelector('.bg10');
 
-const bg1 = document.querySelector(".bg1");
-const bg2 = document.querySelector(".bg2");
-const bg3 = document.querySelector(".bg3");
-const bg4 = document.querySelector(".bg4");
-const bg5 = document.querySelector(".bg5");
-const bg6 = document.querySelector(".bg6");
-const bg7 = document.querySelector(".bg7");
-const bg8 = document.querySelector(".bg8");
-const bg9 = document.querySelector(".bg9");
-const bg10 = document.querySelector(".bg10");
+const boxbg = document.querySelector('.boxBG');
 
-const boxbg = document.querySelector(".boxBG");
-
-
-document.querySelector(".background").addEventListener("click", (e)=> {
-
+document.querySelector('.background').addEventListener('click', (e) => {
   if (e.target === bg1) {
-   
-    center.style.backgroundImage = "";
-    center.style.backgroundImage = "url(./bg/1.jpg)";
-  } else if (e.target === bg2) { 
-    center.style.backgroundImage = "";
-    center.style.backgroundImage = "url(./bg/2.jpg)";
+    center.style.backgroundImage = '';
+    center.style.backgroundImage = 'url(./bg/1.jpg)';
+  } else if (e.target === bg2) {
+    center.style.backgroundImage = '';
+    center.style.backgroundImage = 'url(./bg/2.jpg)';
   } else if (e.target === bg3) {
-    center.style.backgroundImage = "";
-    center.style.backgroundImage = "url(./bg/3.jpg)";
+    center.style.backgroundImage = '';
+    center.style.backgroundImage = 'url(./bg/3.jpg)';
   } else if (e.target === bg4) {
-    center.style.backgroundImage = "";
-    center.style.backgroundImage = "url(./bg/4.jpg)";
+    center.style.backgroundImage = '';
+    center.style.backgroundImage = 'url(./bg/4.jpg)';
   } else if (e.target === bg5) {
-    center.style.backgroundImage = "";
-    center.style.backgroundImage = "url(./bg/5.jpg)";
+    center.style.backgroundImage = '';
+    center.style.backgroundImage = 'url(./bg/5.jpg)';
   } else if (e.target === bg6) {
-    center.style.backgroundImage = "";
-    center.style.backgroundImage = "url(./bg/6.jpg)";
+    center.style.backgroundImage = '';
+    center.style.backgroundImage = 'url(./bg/6.jpg)';
   } else if (e.target === bg7) {
-    center.style.backgroundImage = "";
-    center.style.backgroundImage = "url(./bg/7.jpg)";
+    center.style.backgroundImage = '';
+    center.style.backgroundImage = 'url(./bg/7.jpg)';
   } else if (e.target === bg8) {
-    center.style.backgroundImage = "";
-    center.style.backgroundImage = "url(./bg/8.jpg)";
-  }else if (e.target === bg9) {
-    center.style.backgroundImage = "";
-    center.style.backgroundImage = "url(./bg/9.jpg)";
-  }else if (e.target === bg10) {
-    center.style.backgroundImage = "";
-    center.style.backgroundImage = "url(./bg/10.jpg)";
+    center.style.backgroundImage = '';
+    center.style.backgroundImage = 'url(./bg/8.jpg)';
+  } else if (e.target === bg9) {
+    center.style.backgroundImage = '';
+    center.style.backgroundImage = 'url(./bg/9.jpg)';
+  } else if (e.target === bg10) {
+    center.style.backgroundImage = '';
+    center.style.backgroundImage = 'url(./bg/10.jpg)';
   }
-})
-
+});
 
 const yellowSelect = document.getElementById('yellowSelect') as HTMLInputElement;
 const redSelect = document.getElementById('redSelect') as HTMLInputElement;
 const blueSelect = document.getElementById('blueSelect') as HTMLInputElement;
-const greenSelect = document.getElementById('greenSelect') as HTMLInputElement; 
+const greenSelect = document.getElementById('greenSelect') as HTMLInputElement;
 const allSelect = document.getElementById('allSelect') as HTMLInputElement;
 const offLights = document.getElementById('offLights') as HTMLInputElement;
 
+yellowSelect.addEventListener('click', selectGarland);
+redSelect.addEventListener('click', selectGarland);
+blueSelect.addEventListener('click', selectGarland);
+greenSelect.addEventListener('click', selectGarland);
+allSelect.addEventListener('click', selectGarland);
 
-yellowSelect.addEventListener("click",selectGarland);
-redSelect.addEventListener("click",selectGarland);
-blueSelect.addEventListener("click",selectGarland);
-greenSelect.addEventListener("click",selectGarland);
-allSelect.addEventListener("click",selectGarland);
-
-
-
-
-
-
-
-
-
-
-
-
-
-const body = document.body;
-const endTime = new Date('December 31 2021 23:59:59');
-const daysEl = document.getElementById('days');
-const hoursEl = document.getElementById('hours');
-const minutesEl = document.getElementById('minutes');
-const secondsEl = document.getElementById('seconds');
-
-
-setInterval(updateCountdown, 1000)
-
-function updateCountdown() {
-	const startTime = new Date();
-	const diff = endTime - startTime;
-	const days = Math.floor(diff / 1000 / 60 / 60 / 24);
-	const hours = Math.floor(diff / 1000 / 60 / 60) % 24;
-	const minutes = Math.floor(diff / 1000 / 60) % 60;
-	const seconds = Math.floor(diff / 1000) % 60;
-	daysEl.innerHTML = days;
-	hoursEl.innerHTML = hours < 10 ? '0'+hours : hours;
-	minutesEl.innerHTML = minutes < 10 ? '0'+minutes : minutes;
-	secondsEl.innerHTML = seconds < 10 ? '0'+seconds : seconds;
-}
+setInterval(updateCountdown, 1000);

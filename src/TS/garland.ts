@@ -1,65 +1,29 @@
-
 const yellowSelect = document.getElementById('yellowSelect') as HTMLInputElement;
 const redSelect = document.getElementById('redSelect') as HTMLInputElement;
 const blueSelect = document.getElementById('blueSelect') as HTMLInputElement;
-const greenSelect = document.getElementById('greenSelect') as HTMLInputElement; 
+const greenSelect = document.getElementById('greenSelect') as HTMLInputElement;
 const allSelect = document.getElementById('allSelect') as HTMLInputElement;
 const offLights = document.querySelector('.offLights') as HTMLInputElement;
 // const garland = document.getElementsByTagName('svg') as HTMLInputElement;
 
-const selectedCH = document.querySelector(".selectedCH");
+const selectedCH = document.querySelector('.selectedCH');
+const garland = document.querySelector('.garland');
 
-export function selectGarland(e) {
-   
-    if( yellowSelect.checked) {
-        offLights1();
-        deselect(e);
-        renderLights(`yellow2`,`yellow1`);
-    }  if(redSelect.checked) {
-      
-        deselect(e);
-     renderLights(`red1`,`red2`);
-    } if(blueSelect.checked) {
-        offLights1();
-        deselect(e);
-        renderLights(`blue1`,`blue2`);
-    }  if(greenSelect.checked) {
-        offLights1();
-        deselect(e);
-        renderLights(`green1`,`green2`);
-    } 
-    if (allSelect.checked) {
-        offLights1();
-        deselect(e);
-        renderLights(`allColor1`,`allColor2`);
-    
-    } 
-}
 function deselect(e) {
-    yellowSelect.checked = false;
-    redSelect.checked = false;
-    blueSelect.checked = false;
-    greenSelect.checked = false;
-    allSelect.checked = false;
-    e.checked = true;
-   
-};
-const garland = document.querySelector(".garland")
+  yellowSelect.checked = false;
+  redSelect.checked = false;
+  blueSelect.checked = false;
+  greenSelect.checked = false;
+  allSelect.checked = false;
+  e.checked = true;
+}
 
-function offLights1(){
-   
-    garland.innerHTML="";
-};
+function offLights1() {
+  garland.innerHTML = '';
+}
 
-offLights.addEventListener('click',offLights1);
-
-
-
-
-
-
-function renderLights( lights1,lights2){
- garland.innerHTML = `
+function renderLights(lights1, lights2) {
+  garland.innerHTML = `
          
          
           <circle cx="350" cy="80" r="5" class=${lights1}></circle>
@@ -131,14 +95,35 @@ function renderLights( lights1,lights2){
           <circle cx="250" cy="500" r="5" class=${lights2}></circle>
           <circle cx="300" cy="400" r="5" class=${lights1}></circle>
           <circle cx="350" cy="350" r="5" class=${lights1}></circle>
-     
-          
-         
 
- `
+ `;
 }
 
+export function selectGarland(e) {
+  if (yellowSelect.checked) {
+    offLights1();
+    deselect(e);
+    renderLights('yellow2', 'yellow1');
+  } if (redSelect.checked) {
+    deselect(e);
+    renderLights('red1', 'red2');
+  } if (blueSelect.checked) {
+    offLights1();
+    deselect(e);
+    renderLights('blue1', 'blue2');
+  } if (greenSelect.checked) {
+    offLights1();
+    deselect(e);
+    renderLights('green1', 'green2');
+  }
+  if (allSelect.checked) {
+    offLights1();
+    deselect(e);
+    renderLights('allColor1', 'allColor2');
+  }
+}
 
+offLights.addEventListener('click', offLights1);
 
 // <circle cx="135" cy="45" r="5" class=${lights1}></circle>
 // <circle cx="165" cy="25" r="5" class=${lights2}></circle>
