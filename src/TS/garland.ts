@@ -10,7 +10,9 @@ const offLights = document.querySelector('.offLights') as HTMLInputElement;
 const selectedCH = document.querySelector(".selectedCH");
 
 export function selectGarland(e) {
+   
     if( yellowSelect.checked) {
+        offLights1();
         deselect(e);
         renderLights(`yellow2`,`yellow1`);
     }  if(redSelect.checked) {
@@ -18,13 +20,16 @@ export function selectGarland(e) {
         deselect(e);
      renderLights(`red1`,`red2`);
     } if(blueSelect.checked) {
+        offLights1();
         deselect(e);
         renderLights(`blue1`,`blue2`);
     }  if(greenSelect.checked) {
+        offLights1();
         deselect(e);
         renderLights(`green1`,`green2`);
     } 
     if (allSelect.checked) {
+        offLights1();
         deselect(e);
         renderLights(`allColor1`,`allColor2`);
     
@@ -39,9 +44,11 @@ function deselect(e) {
     e.checked = true;
    
 };
+const garland = document.querySelector(".garland")
 
 function offLights1(){
-    selectedCH.innerHTML ='';
+   
+    garland.innerHTML="";
 };
 
 offLights.addEventListener('click',offLights1);
@@ -52,19 +59,10 @@ offLights.addEventListener('click',offLights1);
 
 
 function renderLights( lights1,lights2){
- selectedCH.innerHTML = `
-  <svg class="garland">
-          <circle cx="105" cy="65" r="5" class=${lights1}></circle>
-          <circle cx="135" cy="45" r="5" class=${lights2}></circle>
-          <circle cx="135" cy="45" r="5" class=${lights1}></circle>
-          <circle cx="165" cy="25" r="5" class=${lights2}></circle>
-          <circle cx="195" cy="5" r="5" class=${lights1}></circle>
-          <circle cx="235" cy="5" r="5" class=${lights2}></circle>
-          <circle cx="265" cy="25" r="5" class=${lights1}></circle>
-          <circle cx="295" cy="45" r="5" class=${lights2}></circle>
-          <circle cx="335" cy="35" r="5" class=${lights2}></circle>
-          <circle cx="400" cy="60" r="5" class=${lights1}></circle>
-          <circle cx="350" cy="80" r="5" class=${lights2}></circle>
+ garland.innerHTML = `
+         
+         
+          <circle cx="350" cy="80" r="5" class=${lights1}></circle>
           <circle cx="330" cy="90" r="5" class=${lights2}></circle>
           <circle cx="300" cy="100" r="5" class=${lights1}></circle>
           <circle cx="250" cy="110" r="5" class=${lights2}></circle>
@@ -133,12 +131,17 @@ function renderLights( lights1,lights2){
           <circle cx="250" cy="500" r="5" class=${lights2}></circle>
           <circle cx="300" cy="400" r="5" class=${lights1}></circle>
           <circle cx="350" cy="350" r="5" class=${lights1}></circle>
-          <circle cx="330" cy="300" r="5" class=${lights2}></circle>
+     
           
          
-        <svg> 
+
  `
 }
 
 
 
+// <circle cx="135" cy="45" r="5" class=${lights1}></circle>
+// <circle cx="165" cy="25" r="5" class=${lights2}></circle>
+// <circle cx="195" cy="5" r="5" class=${lights1}></circle>
+// <circle cx="235" cy="5" r="5" class=${lights2}></circle>
+// <circle cx="265" cy="25" r="5" class=${lights1}></circle>

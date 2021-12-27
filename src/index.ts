@@ -13,6 +13,7 @@ import { sort4Buttons } from './TS/sortByButton';
 import { sortFavourite } from './TS/sortByFAv';
 import { selectGarland } from './TS/garland';
 import { createSnow, updateSnow } from './TS/snow';
+// import { allowDrop,drag,drop } from "./TS/dragdrop";
 
 
 
@@ -98,28 +99,35 @@ dressTreePage.addEventListener("click", toTree);
 
 
 // const selectedCH =document.querySelector(".selectedCH");
-const tree1 = document.querySelector(".tree1");
-const tree2 = document.querySelector(".tree2");
-const tree3 = document.querySelector(".tree3");
-const tree4 = document.querySelector(".tree4");
-const tree5 = document.querySelector(".tree5");
-const tree6 = document.querySelector(".tree6");
+const tree1 = document.querySelector(".tree1") as HTMLInputElement;
+const tree2 = document.querySelector(".tree2") as HTMLInputElement;
+const tree3 = document.querySelector(".tree3") as HTMLInputElement;
+const tree4 = document.querySelector(".tree4") as HTMLInputElement;
+const tree5 = document.querySelector(".tree5") as HTMLInputElement;
+const tree6 = document.querySelector(".tree6") as HTMLInputElement;
 
-
+const treeNew = document.querySelector(".treeNew") as HTMLInputElement;
 document.querySelector(".selectTree").addEventListener("click", (e)=> {
 
   if (e.target === tree1) {
-    selectedCH.style.backgroundImage = "url(./tree/1.png)";
+    treeNew.src = "tree/1.png";
+
+    // selectedCH.style.backgroundImage = "url(./tree/1.png)";
   } else if (e.target === tree2) {
-    selectedCH.style.backgroundImage = "url(./tree/2.png)";
+    treeNew.src = "tree/2.png"
+    // selectedCH.style.backgroundImage = "url(./tree/2.png)";
   } else if (e.target === tree3) {
-    selectedCH.style.backgroundImage = "url(./tree/3.png)";
+    treeNew.src = "tree/3.png"
+    // selectedCH.style.backgroundImage = "url(./tree/3.png)";
   } else if (e.target === tree4) {
-    selectedCH.style.backgroundImage = "url(./tree/4.png)";
+    treeNew.src = "tree/4.png"
+    // selectedCH.style.backgroundImage = "url(./tree/4.png)";
   } else if (e.target === tree5) {
-    selectedCH.style.backgroundImage = "url(./tree/5.png)";
+    treeNew.src = "tree/5.png"
+    // selectedCH.style.backgroundImage = "url(./tree/5.png)";
   } else if (e.target === tree6) {
-    selectedCH.style.backgroundImage = "url(./tree/6.png)";
+    treeNew.src = "tree/6.png"
+    // selectedCH.style.backgroundImage = "url(./tree/6.png)";
   }
 })
 
@@ -144,6 +152,7 @@ const boxbg = document.querySelector(".boxBG");
 document.querySelector(".background").addEventListener("click", (e)=> {
 
   if (e.target === bg1) {
+   
     center.style.backgroundImage = "";
     center.style.backgroundImage = "url(./bg/1.jpg)";
   } else if (e.target === bg2) { 
@@ -191,3 +200,37 @@ blueSelect.addEventListener("click",selectGarland);
 greenSelect.addEventListener("click",selectGarland);
 allSelect.addEventListener("click",selectGarland);
 
+
+
+
+
+
+
+
+
+
+
+
+
+const body = document.body;
+const endTime = new Date('December 31 2021 23:59:59');
+const daysEl = document.getElementById('days');
+const hoursEl = document.getElementById('hours');
+const minutesEl = document.getElementById('minutes');
+const secondsEl = document.getElementById('seconds');
+
+
+setInterval(updateCountdown, 1000)
+
+function updateCountdown() {
+	const startTime = new Date();
+	const diff = endTime - startTime;
+	const days = Math.floor(diff / 1000 / 60 / 60 / 24);
+	const hours = Math.floor(diff / 1000 / 60 / 60) % 24;
+	const minutes = Math.floor(diff / 1000 / 60) % 60;
+	const seconds = Math.floor(diff / 1000) % 60;
+	daysEl.innerHTML = days;
+	hoursEl.innerHTML = hours < 10 ? '0'+hours : hours;
+	minutesEl.innerHTML = minutes < 10 ? '0'+minutes : minutes;
+	secondsEl.innerHTML = seconds < 10 ? '0'+seconds : seconds;
+}

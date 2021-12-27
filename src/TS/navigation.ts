@@ -50,6 +50,9 @@ export function toTree() {
   treeCH.style.pointerEvents = 'none';
   getItems();
   renderLSToys();
+  // dropZone2.ondragover = allowDrop
+  // dropZone2.ondrop = drop;
+  // dragObject.ondragstart = drag;
   // displayNumber(constLS.length);
   // console.log(constLS.length)
 };
@@ -93,7 +96,7 @@ export function renderLSToys() {
     if(constLS.includes(element.num)) {
       selectToys.innerHTML +=`
        <div class="toyCard">
-      </h2><img class="toyImage" src="toys/${element.num}.png" alt="${element.num}">
+      </h2><img class="toyImage" id="${element.num}-${element.count}" src="toys/${element.num}.png" draggable="true" alt="${element.num}">
       <p class="selectedCount">${element.count}</p> 
       </h2>
       </div>`
@@ -101,3 +104,39 @@ export function renderLSToys() {
     }  
   });
 };
+
+
+
+
+
+// const zone1 = document.querySelector(".selectToys") as HTMLInputElement;
+// const  dropZone = document.querySelector(".selectedCH") as HTMLInputElement;
+// const  dropZone2 = document.querySelector(".dressedTrees") as HTMLInputElement;
+
+
+// const dragObject = document.getElementById("1-2");
+// const dragObject1 = document.getElementById("2-5");
+
+
+
+// // dropZone2.ondragover = allowDrop
+//  function allowDrop(e) {
+//   console.log(e)
+//   e.preventDefault();
+// };
+
+// // dragObject.ondragstart = drag;
+//  function drag(e) {
+//   e.dataTransfer.setData('id', e.target.id);
+// };
+
+// // dropZone2.ondrop = drop;
+// function drop(e) {
+//   let itemId = e.dataTransfer.getData('id');
+//   console.log(itemId)
+//   e.target.append(document.getElementById(itemId)); 
+// };
+
+// dropZone2.ondragover = allowDrop
+// dropZone2.ondrop = drop;
+// dragObject.ondragstart = drag;

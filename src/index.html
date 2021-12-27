@@ -93,7 +93,11 @@
       </div>
 
       <div class="lights">
+        <div class="lightsSet">
         <h2>Гирлянда: </h2>
+        <button class="offLights">Выкл</button>
+      </div>
+        <div class="checkLights">
         <label class="lights-checkbox1 ">
           <input  type="checkbox" id="yellowSelect" name="lightsBox" >
           <span class="yellowSelect"></span>
@@ -114,25 +118,54 @@
           <input  type="checkbox" id="allSelect" name="lightsBox" >
           <span class="allSelect"></span>
         </label> 
-        <button class="offLights">Выкл</button>
+       
        </div>
+      </div>
         
       </div>
     <div class="center">
     
       <div class="selectedCH">
-        <canvas id="canvas"></canvas>
-
+        <img usemap="#workmap" class="treeNew" src="tree/1.png" alt="1tree">
+        <map name="workmap">
+          <area shape="poly" coords="34,600,170,10, 400,600" alt="tree" href="#">
         
+        </map>
+        <canvas id="canvas"></canvas>
+        <svg class="garland"></svg>
+
       </div>
      
      </div>
 
     <div class="right"> 
       <div class="selectToys"> 
+        <!-- <img class="toyImage" id="1-2" src="toys/1.png" draggable="true" alt="1"> -->
         
       </div>
-      <div class="dressedTrees"> </div>
+      
+      <div class="dressedTrees">
+        <h2>❄️ New Year is Coming! ❄️</h2>
+        <div class="countdown-container">
+        <div class="time">
+          <h1 id="days">00</h1>
+          <small>days</small>
+        </div>
+        <div class="time">
+          <h1 id="hours">00</h1>
+          <small>hours</small>
+        </div>
+        <div class="time">
+          <h1 id="minutes">00</h1>
+          <small>minutes</small>
+        </div>
+        <div class="time">
+          <h1 id="seconds">00</h1>
+          <small>seconds</small>
+        </div>
+      </div>
+        
+      </div>
     </div>
 
 
