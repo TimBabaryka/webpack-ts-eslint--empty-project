@@ -20,6 +20,7 @@
   };
 
   .treeNew {
+    
     width: 100%;
     height: 100%;
     display: flex;
@@ -248,8 +249,8 @@
 }
 
 .toyImage {
-  height: 60%;
-  width:100%;
+  height: 30px;
+  width:30px;
 }
 
 .toyCard:hover {
@@ -304,26 +305,25 @@
   width: 100%;
 }
 
-
-// .treeBC {
-//   background-image: url(./assets/bg/1.jpg);
+// @media screen and (max-height: 1080px )  {
+//   .treeNew {
+//     margin-left: 17%;
+//   }
 // }
 
-
-// .nav {
-//   display: flex;
+// @media screen and (max-height: 1079px )  {
+//   .treeNew {
+//     margin-left: 0%;
+//   }
 // }
 
-// .ulNav {
-//   display: flex;
-//   list-style: none;
-// }
-
-// .liNav {
-//   margin-left: 5%;
-// }
-
-// .switch {
-// margin-left: 30%;
-// display: flex;
-// }
+.treeDress1{
+  width: 100%;
+  display: flex;
+    background-position: center center;
+    margin-top: 2%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 95%;
+    position: relative;
+}

@@ -53,7 +53,7 @@ export function renderLSToys() {
     if (constLS !== null) {
       if (constLS.includes(element.num)) {
         selectToys.innerHTML += `
-       <div class="toyCard">
+       <div class="toyCard" data-drop-target="true">
       </h2><img class="toyImage" id="${element.num}-${element.count}" src="toys/${element.num}.png" draggable="true" alt="${element.num}">
       <p class="selectedCount">${element.count}</p> 
       </h2>
@@ -61,7 +61,7 @@ export function renderLSToys() {
       }
     } else if (element.num < 20) {
       selectToys.innerHTML += `
-       <div class="toyCard">
+       <div class="toyCard" data-drop-target="true">
       </h2><img class="toyImage" id="${element.num}-${element.count}" src="toys/${element.num}.png" draggable="true" alt="${element.num}">
       <p class="selectedCount">${element.count}</p> 
       </h2>
@@ -78,11 +78,37 @@ export function toTree() {
   treeCH.style.pointerEvents = 'none';
   getItems();
   renderLSToys();
-  // dropZone2.ondragover = allowDrop
-  // dropZone2.ondrop = drop;
-  // dragObject.ondragstart = drag;
-  // displayNumber(constLS.length);
-  // console.log(constLS.length)
+
+  const draggable = document.querySelectorAll('[draggable]');
+  const targets = document.querySelectorAll('[data-drop-target]');
+  let coordX;
+  let coordY;
+
+  function handleDragStart(e) {
+    e.dataTransfer.setData('text', this.id);
+    coordY = e.offsetY;
+    coordX = e.offsetX;
+  }
+
+  function handleOverDrop(e) {
+    e.preventDefault();
+    if (e.type !== 'drop') {
+      return;
+    }
+    const draggedId = e.dataTransfer.getData('text');
+    const draggedEl = document.getElementById(draggedId);
+    draggedEl.style.position = 'absolute';
+    draggedEl.style.top = `${e.pageY - coordY}px`;
+    draggedEl.style.left = `${e.pageX - coordY}px`;
+  }
+
+  for (let i = 0; i < targets.length; i++) {
+    targets[i].addEventListener('dragover', handleOverDrop);
+    targets[i].addEventListener('drop', handleOverDrop);
+  }
+  for (let i = 0; i < draggable.length; i++) {
+    draggable[i].addEventListener('dragstart', handleDragStart);
+  }
 }
 
 export function toToysfromTree():void {
@@ -100,87 +126,3 @@ export function toMainfromTree():void {
     main.style.display = 'grid';
   });
 } // from tree to main
-
-// const zone1 = document.querySelector(".selectToys") as HTMLInputElement;
-// const  dropZone = document.querySelector(".selectedCH") as HTMLInputElement;
-// const  dropZone2 = document.querySelector(".dressedTrees") as HTMLInputElement;
-
-// const dragObject = document.getElementById("1-2");
-// const dragObject1 = document.getElementById("2-5");
-
-// // dropZone2.ondragover = allowDrop
-//  function allowDrop(e) {
-//   console.log(e)
-//   e.preventDefault();
-// };
-
-// // dragObject.ondragstart = drag;
-//  function drag(e) {
-//   e.dataTransfer.setData('id', e.target.id);
-// };
-
-// // dropZone2.ondrop = drop;
-// function drop(e) {
-//   let itemId = e.dataTransfer.getData('id');
-//   console.log(itemId)
-//   e.target.append(document.getElementById(itemId));
-// };
-
-// dropZone2.ondragover = allowDrop
-// dropZone2.ondrop = drop;
-// dragObject.ondragstart = drag;
-
-// const numOfToys = document.querySelector('.numberToys') as HTMLInputElement;
-// const numOfToysTree = document.querySelector('.numberToystree') as HTMLInputElement;
-// let myArray:string[] = [];
-// const colorArray:string[] = [];
-// const toysState = {
-//   numberOfToys: 0,
-// };
-
-// export function displayNumber(num:string) {
-//   numOfToys.innerHTML = `Игрушек:${num}`;
-//   numOfToysTree.innerHTML = `Игрушек:${num}`;
-// }
-
-// export function addtoLS(e:any):void {
-//   const card = document.querySelectorAll<HTMLInputElement>('.card');
-
-//   if (myArray.includes(e.target.alt)) {
-//     myArray.splice(myArray.indexOf(e.target.alt), 1);
-//     colorArray.splice(colorArray.indexOf(e.target.alt), 1);
-
-//     e.target.style.backgroundColor = 'transparent';
-
-//     toysState.numberOfToys--;
-
-//     displayNumber(toysState.numberOfToys.toString());
-//   } else if (e.target.alt && toysState.numberOfToys < 20) {
-//     myArray.push(e.target.alt);
-//     colorArray.push(e.target.alt);
-//     toysState.numberOfToys++;
-
-//     e.target.style.backgroundColor = '#FFE4C4';
-//     displayNumber(toysState.numberOfToys.toString());
-//   } else if (e.target.alt && toysState.numberOfToys === 20) {
-//     alert('Превышен лимит игрушек');
-//   }
-// }
-
-// export function addtoLocalSaved() {
-//   localStorage.setItem('toysNumber', JSON.stringify(myArray));
-// }
-
-// const resetLS = document.querySelector('.resetSettings') as HTMLInputElement;
-// resetLS?.addEventListener('click', () => {
-//   const card = document.querySelectorAll<HTMLInputElement>('.card');
-//   myArray = [];
-//   toysState.numberOfToys = 0;
-
-//   displayNumber(toysState.numberOfToys.toString());
-
-//   card.forEach((element) => {
-//     element.style.backgroundColor = 'transparent';
-//   });
-//   localStorage.clear();
-// });
