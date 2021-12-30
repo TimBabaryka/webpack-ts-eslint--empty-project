@@ -5,7 +5,7 @@ const greenSelect = document.getElementById('greenSelect') as HTMLInputElement;
 const allSelect = document.getElementById('allSelect') as HTMLInputElement;
 const offLights = document.querySelector('.offLights') as HTMLInputElement;
 
-const selectedCH = document.querySelector('.selectedCH') as HTMLInputElement;
+// const selectedCH = document.querySelector('.selectedCH') as HTMLInputElement;
 const garland = document.querySelector('.garland') as HTMLInputElement;
 
 function deselect() {
