@@ -4,25 +4,23 @@ const blueSelect = document.getElementById('blueSelect') as HTMLInputElement;
 const greenSelect = document.getElementById('greenSelect') as HTMLInputElement;
 const allSelect = document.getElementById('allSelect') as HTMLInputElement;
 const offLights = document.querySelector('.offLights') as HTMLInputElement;
-// const garland = document.getElementsByTagName('svg') as HTMLInputElement;
 
-const selectedCH = document.querySelector('.selectedCH');
-const garland = document.querySelector('.garland');
+const selectedCH = document.querySelector('.selectedCH') as HTMLInputElement;
+const garland = document.querySelector('.garland') as HTMLInputElement;
 
-function deselect(e) {
+function deselect() {
   yellowSelect.checked = false;
   redSelect.checked = false;
   blueSelect.checked = false;
   greenSelect.checked = false;
   allSelect.checked = false;
-  e.checked = true;
 }
 
 function offLights1() {
   garland.innerHTML = '';
 }
 
-function renderLights(lights1, lights2) {
+function renderLights(lights1:string, lights2:string) {
   garland.innerHTML = `
          
          
@@ -99,34 +97,28 @@ function renderLights(lights1, lights2) {
  `;
 }
 
-export function selectGarland(e) {
+export function selectGarland(e:Event) {
   if (yellowSelect.checked) {
     offLights1();
-    deselect(e);
+    deselect();
     renderLights('yellow2', 'yellow1');
   } if (redSelect.checked) {
-    deselect(e);
+    deselect();
     renderLights('red1', 'red2');
   } if (blueSelect.checked) {
     offLights1();
-    deselect(e);
+    deselect();
     renderLights('blue1', 'blue2');
   } if (greenSelect.checked) {
     offLights1();
-    deselect(e);
+    deselect();
     renderLights('green1', 'green2');
   }
   if (allSelect.checked) {
     offLights1();
-    deselect(e);
+    deselect();
     renderLights('allColor1', 'allColor2');
   }
 }
 
 offLights.addEventListener('click', offLights1);
-
-// <circle cx="135" cy="45" r="5" class=${lights1}></circle>
-// <circle cx="165" cy="25" r="5" class=${lights2}></circle>
-// <circle cx="195" cy="5" r="5" class=${lights1}></circle>
-// <circle cx="235" cy="5" r="5" class=${lights2}></circle>
-// <circle cx="265" cy="25" r="5" class=${lights1}></circle>

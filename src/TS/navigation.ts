@@ -1,5 +1,5 @@
 import data from './data';
-// import { displayNumber } from './LS';
+
 import { Count } from './interface';
 
 const settings = document.querySelector('.settings') as HTMLInputElement;
@@ -26,32 +26,24 @@ export function mainPage():void {
   });
 } // from main to settings
 
-// export function toDress() {
-//     document.querySelector('.dressTreePage')?.addEventListener("click",()=> {
-//     dressBox.style.display="grid";
-//     settings.style.display="none"
-//     console.log(22)
-//     })
-// } //from setting to main|| settings
-
 const dressTreePage = document.querySelector('.dressTreePage') as HTMLInputElement;
 const tree = document.querySelector('.tree') as HTMLInputElement;
 const treeCH = document.querySelector('.treeCH') as HTMLInputElement;
 const backToMainFromTree = document.querySelector('.backToMainFromTree') as HTMLInputElement;
-const selectToys = document.querySelector('.selectToys');
+const selectToys = document.querySelector('.selectToys') as HTMLInputElement;
 // const chooseToy = document.querySelector(".chooseToy");
 
-let constLS;
+let constLS:number[];
 export function getItems() {
-  const tempLS = localStorage.getItem('toysNumber');
-  constLS = JSON.parse(tempLS);
+  const tempLS: string | null = localStorage.getItem('toysNumber');
+  constLS = JSON.parse(tempLS as string);
   return constLS;
 }
 
 export function renderLSToys() {
-  contentTemp.forEach((element) => {
+  contentTemp.forEach((element:Count) => {
     if (constLS !== null) {
-      if (constLS.includes(element.num)) {
+      if (constLS.includes(+element.num)) {
         selectToys.innerHTML += `
        <div class="toyCard" data-drop-target="true">
       </h2><img class="toyImage" id="${element.num}-${element.count}" src="toys/${element.num}.png" draggable="true" alt="${element.num}">
@@ -59,7 +51,7 @@ export function renderLSToys() {
       </h2>
       </div>`;
       }
-    } else if (element.num < 20) {
+    } else if (+element.num < 20) {
       selectToys.innerHTML += `
        <div class="toyCard" data-drop-target="true">
       </h2><img class="toyImage" id="${element.num}-${element.count}" src="toys/${element.num}.png" draggable="true" alt="${element.num}">
@@ -81,33 +73,42 @@ export function toTree() {
 
   const draggable = document.querySelectorAll('[draggable]');
   const targets = document.querySelectorAll('[data-drop-target]');
-  let coordX;
-  let coordY;
+  let coordX:number;
+  let coordY:number;
 
-  function handleDragStart(e) {
-    e.dataTransfer.setData('text', this.id);
+  function handleDragStart(e:DragEvent) {
+    e.dataTransfer?.setData('text', (e.target as HTMLElement).id);
     coordY = e.offsetY;
     coordX = e.offsetX;
   }
 
-  function handleOverDrop(e) {
+  function handleOverDrop(e:DragEvent) {
     e.preventDefault();
     if (e.type !== 'drop') {
       return;
     }
-    const draggedId = e.dataTransfer.getData('text');
-    const draggedEl = document.getElementById(draggedId);
-    draggedEl.style.position = 'absolute';
-    draggedEl.style.top = `${e.pageY - coordY}px`;
-    draggedEl.style.left = `${e.pageX - coordY}px`;
+    const draggedId = e.dataTransfer?.getData('text');
+    const draggedEl = document.getElementById(draggedId as string);
+
+    if (draggedEl) {
+      draggedEl.style.position = 'absolute';
+      draggedEl.style.top = `${e.pageY - coordY}px`;
+      draggedEl.style.left = `${e.pageX - coordY}px`;
+    }
   }
 
   for (let i = 0; i < targets.length; i++) {
-    targets[i].addEventListener('dragover', handleOverDrop);
-    targets[i].addEventListener('drop', handleOverDrop);
+    targets[i].addEventListener('dragover', (e) => {
+      handleOverDrop(e as DragEvent);
+    });
+    targets[i].addEventListener('drop', (e) => {
+      handleOverDrop(e as DragEvent);
+    });
   }
   for (let i = 0; i < draggable.length; i++) {
-    draggable[i].addEventListener('dragstart', handleDragStart);
+    draggable[i].addEventListener('dragstart', (e) => {
+      handleDragStart(e as DragEvent);
+    });
   }
 }
 

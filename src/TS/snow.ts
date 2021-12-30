@@ -1,9 +1,11 @@
+import { Particles } from './interface';
+
 const canvas = <HTMLCanvasElement>document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 const particlesOnScreen = 245;
 
-const particleArray:any = [];
-let w:any; let h:any;
+const particleArray:Particles[] = [];
+let w:number; let h:number;
 w = canvas.width;
 w = window.innerWidth;
 h = canvas.height;
@@ -13,7 +15,7 @@ function ranNum(min:number, max:number) {
   return min + Math.random() * (max - min + 1);
 }
 
-function clientResize(ev:any) {
+function clientResize() {
   w = canvas.width;
   w = window.innerWidth;
   h = canvas.height;
@@ -58,8 +60,10 @@ function drawSnow() {
       Math.PI * 2,
       false,
     );
-    ctx.fillStyle = gradient;
-    ctx?.fill();
+    if (ctx) {
+      ctx.fillStyle = gradient as CanvasGradient;
+      ctx?.fill();
+    }
   }
 }
 

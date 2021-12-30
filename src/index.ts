@@ -92,7 +92,7 @@ snowFflakes.addEventListener('click', snowOnn);
 
 const dressTreePage = document.querySelector('.dressTreePage');
 
-dressTreePage.addEventListener('click', toTree);
+dressTreePage?.addEventListener('click', toTree);
 
 const tree1 = document.querySelector('.tree1') as HTMLInputElement;
 const tree2 = document.querySelector('.tree2') as HTMLInputElement;
@@ -102,7 +102,7 @@ const tree5 = document.querySelector('.tree5') as HTMLInputElement;
 const tree6 = document.querySelector('.tree6') as HTMLInputElement;
 
 const treeNew = document.querySelector('.treeNew') as HTMLInputElement;
-document.querySelector('.selectTree').addEventListener('click', (e) => {
+document.querySelector('.selectTree')?.addEventListener('click', (e) => {
   if (e.target === tree1) {
     treeNew.src = 'tree/1.png';
 
@@ -141,7 +141,7 @@ const bg10 = document.querySelector('.bg10');
 
 const boxbg = document.querySelector('.boxBG');
 
-document.querySelector('.background').addEventListener('click', (e) => {
+document.querySelector('.background')?.addEventListener('click', (e) => {
   if (e.target === bg1) {
     center.style.backgroundImage = '';
     center.style.backgroundImage = 'url(./bg/1.jpg)';
@@ -189,18 +189,3 @@ greenSelect.addEventListener('click', selectGarland);
 allSelect.addEventListener('click', selectGarland);
 
 setInterval(updateCountdown, 1000);
-console.log(`
-Координаты для ёлки рисовались на разрешении 997 745!
-1. Вёрстка страниц приложения и навигация между ними +30
-2. Меню с настройками + 40/50
-3.Гирлянда +40
-4.Игрушки в избранном +70/80 (в слотах находятся игрушки, которые были добавлены в избранное на странице с игрушками +10,
-  если в избранное не была добавлена ни одна игрушка, в слотах отображаются первые 20 игрушек коллекции исходных данных +10,
-  игрушки из слотов с игрушками можно перетянуть на ёлку используя drag and drop +10,
-  если в процессе перетягивания игрушку отпускают за пределами ёлки, она возвращается в свой слот +10,
-  повешенные на ёлку игрушки можно перетягивать в пределах ёлки +10,
-  повешенные на ёлку игрушки можно снимать с ёлки, при этом они возвращаются в свой слот +10,
-  возле слота с каждой игрушкой указывается количество игрушек в слоте равное количеству экземпляров игрушки в массиве с исходными данными +10)
-  5.часы + 10
-  Оценка 190/200
-`);

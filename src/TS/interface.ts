@@ -8,3 +8,12 @@ export interface Count {
   size: string,
   favorite: boolean;
 }
+
+export interface Particles {
+  x: number,
+  y:number,
+  opacity: number,
+  speedX: number,
+  speedY: number,
+  radius: number,
+}
