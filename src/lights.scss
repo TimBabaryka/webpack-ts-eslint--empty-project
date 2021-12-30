@@ -1,0 +1,534 @@
+$globe-width:   12px;
+$globe-height:  28px;
+$globe-spacing: 40px;
+$globe-spread: 3px;
+$light-off-opacity: 0.4;
+
+
+
+
+.garland {
+  margin-left: 20%;
+  margin-top: 23%;
+  pointer-events: none;
+    // margin-top: 271px;
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    --purple:purple;
+    --red: #ff2c2c;
+    --redW: #ffcccb;
+    --yellow: #ffeb00;
+    --yellowW: lightyellow;
+    --green: #00ff5d;
+    --greenW: #2d500c;
+    --blue: #0095ff;
+    --blueW:#d8ecf3;
+    --speed: 1.5s;
+
+  }
+  
+  .red1 {
+    fill: var(--red);
+    animation: var(--speed) alternate 0s infinite onlyRed;
+  }
+  .red2 {
+    fill: var(--red);
+    animation: var(--speed) alternate 0s infinite onlyRed1;
+  }
+  
+  .yellow1 {
+    fill: var(--yellow);
+    animation: var(--speed) alternate 0s infinite onlyYellow;
+  }
+  .yellow2 {
+    fill: var(--yellow);
+    animation: var(--speed) alternate 0s infinite onlyYellow1;
+  }
+  
+  .blue1 {
+    fill: var(--blue);
+    animation: var(--speed) alternate 0s infinite onlyBlue;
+  }
+  .blue2 {
+    fill: var(--blue);
+    animation: var(--speed) alternate 0s infinite onlyBlue1;
+  }
+  
+  .green1 {
+    fill: var(--green);
+    animation: var(--speed) alternate 0s infinite onlyGreen;
+  }
+  .green2 {
+    fill: var(--green);
+    animation: var(--speed) alternate 0s infinite onlyGreen1;
+  }
+
+  .allColor1 {
+    fill: var(--green);
+    animation: var(--speed) alternate 0s infinite onlyAll;
+  }
+  .allColor2 {
+    fill: var(--green);
+    animation: var(--speed) alternate 0s infinite blinkpurple;
+  }
+  
+  @keyframes blinkRed {
+    0%{
+      fill: var(--red);
+    }
+    25% {
+      fill: var(--yellow);
+    }
+    50% {
+      fill: var(--blue);
+    }
+    75% {
+      fill: var(--green);
+    }
+  }
+  
+  @keyframes blinkYellow {
+    0%{
+      fill: var(--yellow);
+    }
+    25% {
+      fill: var(--blue);
+    }
+    50% {
+      fill: var(--green);
+    }
+    75% {
+      fill: var(--red);
+    }
+  }
+  
+  @keyframes blinkBlue {
+    0%{
+      fill: var(--blue);
+    }
+    25% {
+      fill: var(--green);
+    }
+    50% {
+      fill: var(--red);
+    }
+    75% {
+      fill: var(--yellow);
+    }
+  }
+  
+  @keyframes blinkpurple {
+    25%{
+      fill: var(--green);
+    }
+    0% {
+      fill: var(--red);
+    }
+    50% {
+      fill: var(--yellow);
+    }
+    75% {
+      fill: var(--blue);
+    }
+    100% {
+      fill: var(--purple);
+    }
+  }
+
+  @keyframes onlyYellow {
+    0%{
+        fill: var(--yellowW);
+    }
+    25% {
+      fill: var(--yellow);
+    }
+    50% {
+      fill: var(--yellowW);
+    }
+    75% {
+      fill: var(--yellow);
+    }
+  }
+
+  @keyframes onlyYellow1 {
+    0%{fill: var(--yellow);
+        
+    }
+    25% {
+      fill: var(--yellowW);
+      
+    }
+    50% {
+      fill: var(--yellow);
+      
+    }
+    75% {
+      fill: var(--yellowW);
+    }
+  }
+
+  @keyframes onlyBlue{
+    0%{
+        fill: var(--blueW);
+    }
+    25% {
+      fill: var(--blue);
+    }
+    50% {
+      fill: var(--blueW);
+    }
+    75% {
+      fill: var(--blue);
+    }
+  }
+
+  @keyframes onlyBlue1 {
+    0%{
+        fill: var(--blue);
+    }
+    25% {
+      fill: var(--blueW);
+    }
+    50% {
+      fill: var(--blue);
+    }
+    75% {
+      fill: var(--blueW);
+    }
+  }
+
+
+  @keyframes onlyRed{
+    0%{
+        fill: var(--redW);
+    }
+    25% {
+      fill: var(--red);
+    }
+    50% {
+      fill: var(--redW);
+    }
+    75% {
+      fill: var(--red);
+    }
+  }
+
+  @keyframes onlyRed1{
+    0%{
+        fill: var(--red);
+    }
+    25% {
+      fill: var(--redW);
+    }
+    50% {
+      fill: var(--red);
+    }
+    75% {
+      fill: var(--redW);
+    }
+  }
+
+  @keyframes onlyGreen{
+    0%{
+        fill: var(--greenW);
+    }
+    25% {
+      fill: var(--green);
+    }
+    50% {
+      fill: var(--greenW);
+    }
+    75% {
+      fill: var(--green);
+    }
+  }
+  @keyframes onlyGreen1 {
+    0%{
+        fill: var(--green);
+    }
+    25% {
+      fill: var(--greenW);
+    }
+    50% {
+      fill: var(--green);
+    }
+    75% {
+      fill: var(--greenW);
+    }
+  }
+  
+  @keyframes onlyAll{
+    0%{
+        fill: var(--green);
+    }
+    25% {
+      fill: var(--red);
+    }
+    50% {
+      fill: var(--blue);
+    }
+    75% {
+      fill: var(--yellow);
+    }
+  }
+  @keyframes onlyAll1{
+    0%{
+        fill: var(--yellow);
+    }
+    25% {
+      fill: var(--blue);
+    }
+    50% {
+      fill: var(--red);
+    }
+    75% {
+      fill: var(--green-);
+    }
+    100% {
+      fill: var(--purple);
+    }
+  }
+
+
+
+
+
+
+
+
+
+.checkLights {
+  margin-bottom: 3%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+
+
+
+.lights {
+  flex-direction: column;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+  .lights-checkbox1 {
+    width: 25px;
+    height: 25px;
+  }
+  .lights-checkbox1 input {
+    display: none;
+  }
+  .lights-checkbox1 {
+    .yellowSelect{
+      border-radius: 100%;
+      display: inline-block;
+      cursor: pointer;
+      background-color: yellow;
+      width: 30px;
+      height: 30px;
+      background-repeat: no-repeat;
+      background-size: contain;
+        
+    }
+  }
+  
+  .lights-checkbox1 input:checked +.yellowSelect {
+    border: rgb(0, 255, 242) 2px solid;
+    background-color: yellow; 
+  }
+
+
+
+
+
+
+  .lights-checkbox2 {
+    width: 25px;
+    height: 25px;
+  }
+  .lights-checkbox2 input {
+    display: none;
+  }
+  .lights-checkbox2 {
+    .redSelect{
+     border-radius: 100%;
+      display: inline-block;
+      cursor: pointer;
+      background-color: red;
+      width: 30px;
+      height: 30px;
+      background-repeat: no-repeat;
+      background-size: contain;
+        
+    }
+  }
+  
+  .lights-checkbox2 input:checked +.redSelect {
+    border: rgb(0, 255, 242) 2px solid;
+    background-color: red; 
+  }
+
+
+
+  .lights-checkbox3 {
+    width: 25px;
+    height: 25px;
+  }
+  .lights-checkbox3 input {
+    display: none;
+  }
+  .lights-checkbox3 {
+    .blueSelect{
+        border-radius: 100%;
+      display: inline-block;
+      cursor: pointer;
+      background-color: blue;
+      width: 30px;
+      height: 30px;
+      background-repeat: no-repeat;
+      background-size: contain;
+        
+    }
+  }
+  
+  .lights-checkbox3 input:checked +.blueSelect {
+    border: rgb(0, 255, 242) 2px solid;
+    background-color: blue; 
+  }
+
+
+
+
+  .lights-checkbox4 {
+    width: 25px;
+    height: 25px;
+  }
+  .lights-checkbox4 input {
+    display: none;
+  }
+  .lights-checkbox4 {
+    .greenSelect{
+        border-radius: 100%;
+      display: inline-block;
+      cursor: pointer;
+      background-color: green;
+      width: 30px;
+      height: 30px;  
+      background-repeat: no-repeat;
+      background-size: contain;
+        
+    }
+  }
+  
+  .lights-checkbox4 input:checked +.greenSelect {
+    border: rgb(0, 255, 242) 2px solid;
+    background-color: green; 
+  }
+
+
+
+  .lights-checkbox5 {
+    width: 25px;
+    height: 25px;
+  }
+  .lights-checkbox5 input {
+    display: none;
+  }
+  .lights-checkbox5 {
+    .allSelect {
+      border-radius: 100%;
+      display: inline-block;
+      cursor: pointer;
+      background-image: url(./assets/images/4colours.jpg);
+      width: 30px;
+      height: 30px;  
+      background-repeat: no-repeat;
+      background-size: contain;
+        
+    }
+  }
+  
+  .lights-checkbox5 input:checked +.allSelect {
+    border: rgb(0, 255, 242) 2px solid;
+    background-image: url(./assets/images/4colours.jpg);
+       
+  }
+
+
+
+.offLights {
+    border-radius: 15rem;
+    color: white;
+    background-color: rgba(27, 162, 172, 0.5);
+    width: 20%;
+    height: 90%;
+    font-size: 1.6rem;
+    transition: 0.5s ease-in-out;
+}
+
+.lightsSet {
+  justify-content: space-evenly;
+  display: flex;
+
+}
+
+
+
+@media screen and (max-width: 1440px ) {
+  .garland {
+    margin-left: 18%;
+    margin-top: 21%;
+    pointer-events: none;
+    position: absolute;
+    width: 75%;
+    height: 80%;
+  }
+}
+
+@media screen and (max-width: 1261px ) {
+  .garland {
+    margin-left: 12%;
+    margin-top: 22%;
+    pointer-events: none;
+    position: absolute;
+    width: 61%;
+    height: 80%;
+  }
+}
+
+
+
+@media screen and (max-width: 1000px ) {
+  .garland { 
+    margin-left: 8%;
+    margin-top: 16%;
+    pointer-events: none;
+    position: absolute;
+    width: 66%;
+    height: 80%;
+  }
+  .lightsSet h2 {
+    font-size:10px;
+  }
+}
+
+@media screen and (max-width: 768px ) {
+  .garland { 
+    margin-left: -6%;
+    margin-top: 16%;
+    pointer-events: none;
+    position: absolute;
+    width: 82%;
+    height: 88%;
+  }
+
+  .offLights {
+  width: 31%;
+  height: 95%;
+  font-size: 10px;
+}
+
+}

@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <link rel="shortcut icon" href="tree.ico" />
-  <!-- <link rel="shortcut icon" href="./tree.jpg" type="image/x-icon"> -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dress Christmass Tree</title>
@@ -11,24 +10,173 @@
 <body >
   
 
-  
-  <!-- <section class="dressBox">
-    <header class="header">
-      <a class="backToMain"  href="#">
+  <section class="tree">
+    <header class="headerTree"> 
+
+       <!-- <nav class="nav">
+        <div class="navOne">
+            <ul class="ulNav">
+                <li class="liNav">Skills</li>
+                <li class="liNav">Portfolio</li>
+                <li class="liNav">Video</li>
+                <li class="liNav">Price</li>
+                <li class="liNav">Contacts</li>
+            </ul>
+        </div> 
+        <div class="switch"> 
+             <span class="spanOne">en</span>
+            <span class="spanTwo">/</span>
+            <span class="spanThree">ru</span> 
+         </div> 
+    </nav>  -->
+
+       <a class="backToMainFromTree"  href="#">
       </a>
-      <a class="dressTreePage"  href="#">
-      Ёлки</a>
-      <a class="toys"  href="#"> Игрушки
+      <a class="chooseToy"  href="#">
+      Игрушки</a>
+      <a class="treeCH"  href="#"> Ёлки
       </a>
+      <h2 class="numberToystree">Игрушек:0</h2> 
+ 
     </header>
-  </section> -->
+
+    <div class="left">
+      <div class="music">
+        <button class="audio" ></button>
+          <label class="snowBox">
+            <input  type="checkbox" id="snowFlake" name="music" >
+            <span class="snowFlake"></span>
+          </label>
+         </div>
+      <div class="selectTree"> 
+        <div class="tree1 treeHover "> </div>
+        <div class="tree2 treeHover"> </div>
+        <div class="tree3 treeHover"> </div>
+        <div class="tree4 treeHover"> </div>
+        <div class="tree5 treeHover"> </div>
+        <div class="tree6 treeHover"> </div>
+      </div>
+      <div class="background">
+          <div class="boxBG ">
+            <img class="bcImage bg1" src="bg/1.jpg" alt="">
+          </div>
+          <div class="boxBG ">
+            <img class="bcImage bg2" src="bg/2.jpg" alt="">
+          </div>
+          <div class="boxBG ">
+            <img class="bcImage bg3" src="bg/3.jpg" alt="">
+          </div>
+          <div class="boxBG ">
+            <img class="bcImage bg4" src="bg/4.jpg" alt="">
+          </div>
+          <div class="boxBG ">
+            <img class="bcImage bg5" src="bg/5.jpg" alt="">
+          </div>
+          <div class="boxBG ">
+            <img class="bcImage bg6" src="bg/6.jpg" alt="">
+          </div>
+          <div class="boxBG ">
+            <img class="bcImage bg7" src="bg/7.jpg" alt="">
+          </div>
+          <div class="boxBG ">
+            <img class="bcImage bg8" src="bg/8.jpg" alt="">
+          </div>
+          <div class="boxBG ">
+            <img class="bcImage bg9" src="bg/9.jpg" alt="">
+          </div>
+          <div class="boxBG ">
+            <img class="bcImage bg10" src="bg/10.jpg" alt="">
+          </div>
+          
+         
+         
+      </div>
+
+      <div class="lights">
+        <div class="lightsSet">
+        <h2>Гирлянда: </h2>
+        <button class="offLights">Выкл</button>
+      </div>
+        <div class="checkLights">
+        <label class="lights-checkbox1 ">
+          <input  type="checkbox" id="yellowSelect" name="lightsBox" >
+          <span class="yellowSelect"></span>
+        </label> 
+        <label class="lights-checkbox2 ">
+          <input  type="checkbox" id="redSelect" name="lightsBox" >
+          <span class="redSelect"></span>
+        </label> 
+        <label class="lights-checkbox3 ">
+          <input  type="checkbox" id="blueSelect" name="lightsBox" >
+          <span class="blueSelect"></span>
+        </label> 
+        <label class="lights-checkbox4 ">
+          <input  type="checkbox" id="greenSelect" name="lightsBox" >
+          <span class="greenSelect"></span>
+        </label> 
+        <label class="lights-checkbox5 ">
+          <input  type="checkbox" id="allSelect" name="lightsBox" >
+          <span class="allSelect"></span>
+        </label> 
+       
+       </div>
+      </div>
+        
+      </div>
+    <div class="center">
+    
+      <div class="selectedCH" >
+        <img  usemap="#workmap" class="treeNew" src="tree/1.png" alt="1tree">
+        <map data-drop-target="true" name="workmap">
+          <area shape="poly" coords="100,900,350,10, 600,900" alt="tree" href="#">
+        </map>
+    
+        <canvas id="canvas"></canvas>
+        <svg class="garland"></svg>
+
+      </div>
+     
+     </div>
+
+    <div class="right"> 
+      <div class="selectToys"> 
+        <!-- <img class="toyImage" id="1-2" src="toys/1.png" draggable="true" alt="1"> -->
+        
+      </div>
+      
+      <div class="dressedTrees">
+        <h2>❄️ New Year is Coming! ❄️</h2>
+        <div class="countdown-container">
+        <div class="time">
+          <h1 id="days">00</h1>
+          <small>days</small>
+        </div>
+        <div class="time">
+          <h1 id="hours">00</h1>
+          <small>hours</small>
+        </div>
+        <div class="time">
+          <h1 id="minutes">00</h1>
+          <small>minutes</small>
+        </div>
+        <div class="time">
+          <h1 id="seconds">00</h1>
+          <small>seconds</small>
+        </div>
+      </div>
+        
+      </div>
+    </div>
+
+
+  </section>
+  
 
   <section class="settings">
     
-    
 
     <header class="header"> 
-      <canvas id="canvas"></canvas>
+      
       <a class="backToMain"  href="#">
       </a>
       <a class="dressTreePage"  href="#">
@@ -38,6 +186,7 @@
       <h2 class="numberToys">Игрушек:0</h2>
       <button class="savetoLS"> Сохранить избранное</button>
     </header>
+
     <div class="leftSlot">
       
         <div class="search">
@@ -46,7 +195,7 @@
             <input class="search-input" type="text" autocomplete="off" name="search" placeholder="Search..">
           </form>
         </div>
-        <div class="snowMusic">
+        <!-- <div class="snowMusic">
           <button class="audio" ></button>
           <label class="snowBox">
             <input  type="checkbox" id="snowFlake" name="music" >
@@ -54,7 +203,7 @@
           </label>
          
 
-        </div>
+        </div> -->
         <div class="sort">
           <h2>Сортировать по:</h2>
           <div class="dropdown">

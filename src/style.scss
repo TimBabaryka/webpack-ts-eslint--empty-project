@@ -1,4 +1,7 @@
 @import "./settings.scss";
+@import "./tree.scss";
+@import "./lights.scss";
+@import "./countdown.scss";
 
 
 * {
@@ -51,7 +54,7 @@
   border-radius: 10rem;
   color: white;
   background-color: rgba(27, 162, 172, 0.5);
-  
+
   width: 12%;
   height: 7%;
 }

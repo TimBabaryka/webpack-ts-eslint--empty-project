@@ -1,6 +1,7 @@
 @import "./checkBox.scss";
 
 
+
 // .dressBox{
 //   display:none;
 //   background-color: black;
@@ -27,11 +28,11 @@
 }
 
 .header {
-  min-height: 121px;
+  max-height: 100%;
   display:flex;
   grid-area: header;
   background-color: rgba(27, 12, 12, 0.5);
-  justify-content:space-between;
+  justify-content:space-around;
   align-items:center;   
 }
 
@@ -46,7 +47,7 @@
     background-size: contain;
     background-repeat:no-repeat;
     width:8%;
-    height:100%;
+    height:60%;
     background-image:url(./assets/svg/tree.svg);
 }
 
@@ -457,11 +458,13 @@
 }
 
 #canvas {
+  // height: 91% !important;
+  // width: 44% !important;
   position:absolute;
   z-index: 2;
   pointer-events:none;
   height: 100%;
-    width: 100%;
+  width: 100%;
 }
 
 .snowBox {
@@ -494,7 +497,7 @@
   color: white;
   background-color: rgba(27, 162, 172, 0.5);
   width: 10%;
-  height: 40%;
+  height: 40px;
   font-size: 0.6rem;
   transition: 0.5s ease-in-out;
 
